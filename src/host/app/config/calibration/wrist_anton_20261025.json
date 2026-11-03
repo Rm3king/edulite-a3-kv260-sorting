@@ -1,0 +1,240 @@
+{
+  "schema": "workcell.camera.intrinsics.v1",
+  "calibration_id": "wrist_anton_20261016107_640x400_20261025",
+  "camera": {
+    "name": "Xitech Anton",
+    "usb_id": "8076:0001",
+    "serial": "20261016107",
+    "stable_device": "/dev/v4l/by-id/usb-Xitech_Anton_20261016107-video-index0",
+    "image_size": [
+      640,
+      400
+    ]
+  },
+  "distortion_model": "opencv_brown_conrady",
+  "distortion_order": [
+    "k1",
+    "k2",
+    "p1",
+    "p2",
+    "k3"
+  ],
+  "camera_matrix": [
+    [
+      724.7731650474101,
+      0.0,
+      284.25373709068884
+    ],
+    [
+      0.0,
+      724.6802365478037,
+      171.52595476219463
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "distortion": [
+    -0.5237511921576398,
+    0.42379149315756204,
+    0.0005456238413535535,
+    0.0004376790985745442,
+    -0.3111513294543222
+  ],
+  "pixel_convention": "OpenCV u right, v down, origin top-left",
+  "length_unit": "m",
+  "board": {
+    "inner_corners": [
+      17,
+      17
+    ],
+    "square_size_m": 0.0045
+  },
+  "capture_controls": {
+    "auto_exposure": 1,
+    "exposure_time_absolute": 10,
+    "gamma": 348,
+    "original": {
+      "auto_exposure": 3,
+      "exposure_time_absolute": 20,
+      "gamma": 348
+    },
+    "focus_changed": false,
+    "motor_commands": 0,
+    "note": "UVC readbacks confirmed; exposure is control units, not independently measured exposure time. Manual exposure retained. Gamma200 trial restored. No camera restart or firmware change."
+  },
+  "focus": "User manually focused; unchanged during accepted acquisition; refocus requires recalibration review",
+  "fit": {
+    "views": 12,
+    "rms_px": 0.20856260122168702,
+    "candidate_sha256": "1ed77e0657eff7addb9d264a2f92e89fb3914e052ce7398bd47f3ee5c9d3ec23",
+    "sources": [
+      {
+        "view": "pose01_132908",
+        "selected_frame": 1,
+        "observation_sha256": "0e95c3c611cd1ce3e320a8c5df7038f9fdad1e2ff2b3954337e75d3879cf72a1",
+        "image_sha256": "2c3188950714d53955e6a39a0fc38d7b9b56a3b822289edb2a15a73424a12aac"
+      },
+      {
+        "view": "pose02",
+        "selected_frame": 1,
+        "observation_sha256": "c028b5dfdbbb5b9aeef4bff8e936f98753ddebef94f139447bab15758435f3ca",
+        "image_sha256": "4295b38d175763d88d97c4f10b888c0c0b94ebf927eeb9b2681d6e248158d7ac"
+      },
+      {
+        "view": "pose03_retry01",
+        "selected_frame": 2,
+        "observation_sha256": "1f48682f9b839aa7c698ba3dd9d3c83c45bbda6511db8d35fc7fadb8912fa016",
+        "image_sha256": "8ce183931c0330d8e65610fa8d8db07c3d7456eb9a82e43fc19760aaecc5d446"
+      },
+      {
+        "view": "pose04",
+        "selected_frame": 1,
+        "observation_sha256": "0296e43547a1de862884678b7e0d46b0800d0c5b6aed29c01f7641c8dadeae89",
+        "image_sha256": "ff1265189d171994ea83e74bcd0ac01a41308e5d132cf567b0fdb5d42b193e6a"
+      },
+      {
+        "view": "pose05",
+        "selected_frame": 1,
+        "observation_sha256": "17023c39c85843812957ddf8eb44fb52e9ec5df334fd6f25387ecbdd6ab7c39f",
+        "image_sha256": "29e2e2c5fe060c79cdf9ba7a3da40ca7a7e91c48189cf9148368dae31805a17c"
+      },
+      {
+        "view": "pose06",
+        "selected_frame": 1,
+        "observation_sha256": "64acd87ed805883d461f375f7e8b2121afdc2e32e994bdb4c2e175fc0e21c9a7",
+        "image_sha256": "5933e91f69401682625393aaf286b4c1175a2e27c064cbe38f540d379c0af387"
+      },
+      {
+        "view": "pose07",
+        "selected_frame": 1,
+        "observation_sha256": "deec85d2b9a2fed5c260da720b41694105e6b2147d4f813025f9d43118d1fbbf",
+        "image_sha256": "08abbc63e51a0a4db944b78b10004e51c84e6fa72ebc871bbf119433887cf599"
+      },
+      {
+        "view": "pose08_retry01",
+        "selected_frame": 1,
+        "observation_sha256": "736009d1b3dc2c21baa10ed8d3371f05b11c65ddea9248e1f812e3d03afb3f59",
+        "image_sha256": "0ebb41fb4b4a21fc6ea59b8de91593d82b5b8a5280b979b3cb5ebe8b0e8e388e"
+      },
+      {
+        "view": "pose09_exposure10",
+        "selected_frame": 1,
+        "observation_sha256": "f8923492576e38b9fa8b88080e5d49b5d0f809d80020c334dafbe36fa1ddbffb",
+        "image_sha256": "900840a1dc1b1326c515aff440f943d4fb6b54eb53c2a11334e0700f2001c838"
+      },
+      {
+        "view": "pose10",
+        "selected_frame": 1,
+        "observation_sha256": "fd08ab39aafb7a81e869dbd7058d1970dda41b35ffaafbfdd0937e95d747e7b4",
+        "image_sha256": "c226606a8489d97a89d38c5a8c008c246f441dcd04b4d8da350ec93b232c20fb"
+      },
+      {
+        "view": "pose11",
+        "selected_frame": 1,
+        "observation_sha256": "0cdb2b71f87457bee9ae541a2c14f2f0faca011ead80ec5f08817aa2d6c48960",
+        "image_sha256": "75b63f02711f21a7eb756569b9b658d552d6bc515e1f975c88ffeedef26656f8"
+      },
+      {
+        "view": "pose12",
+        "selected_frame": 1,
+        "observation_sha256": "662df61a0972a055229965cab534430fc121a17cd5b155f1bd8214b33a487fd8",
+        "image_sha256": "3f8cb25fb10235f5a4580ddcffe8c50f064d3ebf7a523aecd846b48a5e59d6c1"
+      }
+    ]
+  },
+  "validation": {
+    "status": "PASS_IMAGE_REPROJECTION_3_HELDOUT_VIEWS",
+    "intrinsics_refitted_on_holdouts": false,
+    "policy": {
+      "required_views": 3,
+      "refit_intrinsics_on_holdout": false,
+      "pose_estimation": "solvePnP with fixed intrinsics per held-out image",
+      "max_each_view_rms_px": 0.5,
+      "max_each_view_p95_px": 1.0,
+      "scope": "Image reprojection validation only, not metric TCP or hand-eye accuracy",
+      "after_failure": "Preserve failed validation, revise explicitly and collect new holdouts if intrinsics refitted"
+    },
+    "results": [
+      {
+        "view": "holdout13",
+        "selected_frame": 1,
+        "image_sha256": "965a66d6d8e580e2d28efc003c18c73aad3a8e75dad3c9e4afb6f2220c258b57",
+        "candidate_sha256": "1ed77e0657eff7addb9d264a2f92e89fb3914e052ce7398bd47f3ee5c9d3ec23",
+        "status": "PASS",
+        "rms_px": 0.0581577507989432,
+        "p95_px": 0.10225362534496449,
+        "max_px": 0.15827065960502706,
+        "positive_depth": true,
+        "fit_intrinsics_changed": false,
+        "scope": "Held-out image reprojection with fixed K/D; pose fitted to this image, not independent metric/TCP accuracy",
+        "rvec": [
+          -0.532494915642454,
+          0.020437499303393544,
+          -0.006590848623565823
+        ],
+        "tvec_m": [
+          -0.04285762991075033,
+          -0.01383088945143473,
+          0.25453239072133066
+        ]
+      },
+      {
+        "view": "holdout14",
+        "selected_frame": 1,
+        "image_sha256": "6704c5d9c50f8878b3319ebde533e99a62259d860750f288e8483d0c86205c20",
+        "candidate_sha256": "1ed77e0657eff7addb9d264a2f92e89fb3914e052ce7398bd47f3ee5c9d3ec23",
+        "status": "PASS",
+        "rms_px": 0.07507514291646913,
+        "p95_px": 0.14176996320043922,
+        "max_px": 0.23563873871737534,
+        "positive_depth": true,
+        "fit_intrinsics_changed": false,
+        "scope": "Held-out image reprojection with fixed K/D; pose fitted to this image, not independent metric/TCP accuracy",
+        "rvec": [
+          -0.15267185662926805,
+          -0.6415048310119176,
+          -0.018872195711417936
+        ],
+        "tvec_m": [
+          -0.047438308615906845,
+          -0.013018373380026866,
+          0.22145351528571514
+        ]
+      },
+      {
+        "view": "holdout15",
+        "selected_frame": 1,
+        "image_sha256": "11a6125275670afcdb2663e951c4750a6c7d98acbc93827571525dedae9267bf",
+        "candidate_sha256": "1ed77e0657eff7addb9d264a2f92e89fb3914e052ce7398bd47f3ee5c9d3ec23",
+        "status": "PASS",
+        "rms_px": 0.1819457290572795,
+        "p95_px": 0.31955359507172404,
+        "max_px": 0.47317593326093715,
+        "positive_depth": true,
+        "fit_intrinsics_changed": false,
+        "scope": "Held-out image reprojection with fixed K/D; pose fitted to this image, not independent metric/TCP accuracy",
+        "rvec": [
+          -0.24822694291901617,
+          0.26660552660765097,
+          -0.07722999789647723
+        ],
+        "tvec_m": [
+          -0.04651059475886684,
+          -0.009998503197390336,
+          0.242501890625356
+        ]
+      }
+    ],
+    "scope": "Three new image poses with fixed intrinsics. Does not validate absolute millimetre positioning, TCP or hand-eye. Held-out spatial coverage is central/left; right edge included in fitting but not independently validated."
+  },
+  "intrinsic_reprojection_validated": true,
+  "handeye_verified": false,
+  "grasp_correction_verified": false,
+  "robot_execution_authorized": false,
+  "deployment_status": "SAVED_FOR_WRIST_GEOMETRY_NOT_ACTIVATED_IN_ROBOT",
+  "evidence": "aipc_app/reports/wrist_intrinsics_20261025",
+  "created_at": "2026-10-25T13:57:28.227848+08:00"
+}

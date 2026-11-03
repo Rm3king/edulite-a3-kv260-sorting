@@ -1,0 +1,13 @@
+{
+  "generator": "Vitis HLS 2025.2",
+  "top": "trajectory_eval",
+  "regenerate": "./contest/trajectory/run.sh csynth && /usr/bin/python3 scripts/sync_trajectory_rtl.py",
+  "sha256": {
+    "contest/trajectory/build/trajectory_eval/hls/syn/verilog/trajectory_eval_sparsemux_7_2_32_1_1.v": "667adb96eb352350fa368936033ba414c62f68e04536d0bfe30ddb154b63534c",
+    "contest/trajectory/build/trajectory_eval/hls/syn/verilog/trajectory_eval_mul_56s_41ns_97_1_1.v": "6b25dc157eaf031776ddbcf502906aaa412e583ddd1ac6d657cff356a363d443",
+    "contest/trajectory/build/trajectory_eval/hls/syn/verilog/trajectory_eval_mul_48s_41ns_89_1_1.v": "51940c3761019bbf0939244a3b7b149930f5022441add972bb07733d26bca395",
+    "contest/trajectory/build/trajectory_eval/hls/syn/verilog/trajectory_eval.v": "7013115acbce2fae30db3d4ffdb125a6a1a6de236ceb73d8ee7c5a23e0a4b780",
+    "contest/trajectory/source/trajectory.hpp": "fd086ec520f38ac482e61224d7603d4c945e571f4745173b9f219c6e7e9ba340",
+    "contest/trajectory/source/trajectory.cpp": "74572d088bccc12b427c42fa51d6a79e40c8158b004f8af72ea06278d21f2a66"
+  }
+}

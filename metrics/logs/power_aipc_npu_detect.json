@@ -1,0 +1,16 @@
+{
+ "label": "npu_detect",
+ "sensor": {
+  "hwmon": "/sys/class/hwmon/hwmon10",
+  "power1_label": "PPT"
+ },
+ "samples": 486,
+ "mean_w": 54.3099279835391,
+ "min_w": 34.048,
+ "max_w": 64.037,
+ "seconds": 49.13441586494446,
+ "energy_j": 2668.4865871383945,
+ "frames": 500,
+ "energy_per_frame_j": 5.336973174276789,
+ "fps": 10.17616656671665
+}

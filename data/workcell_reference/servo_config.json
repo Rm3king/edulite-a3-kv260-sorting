@@ -1,0 +1,39 @@
+{
+  "job_sha256": "c9617cc6bcb2252a84d962461fb87128d4c1f98ddf5e719eff6e781ded637561",
+  "J_pixels_per_m": [
+    [
+      4973.684629355731,
+      -306.21743324923045
+    ],
+    [
+      -422.0321311150741,
+      -4540.597506399948
+    ]
+  ],
+  "coarse_center_px": [
+    290,
+    300
+  ],
+  "target_px": [
+    271.89919957876685,
+    207.34043578675406
+  ],
+  "target_evidence": {
+    "target_px": [
+      271.89919957876685,
+      207.34043578675406
+    ],
+    "tip_midpoint_px": [
+      275.0,
+      83.0
+    ],
+    "tip_plane_camera_z": 0.09508732135315921,
+    "scope": "Visual fingertip midpoint with unvalidated depth extrapolation; noncontact test only"
+  },
+  "python_paths": [
+    "/opt/edulite/host/integration",
+    "/opt/edulite/project/contest/arm_runtime",
+    "/opt/edulite/project/contest/kv260_can/software"
+  ],
+  "launcher": "/home/user/.local/share/aipc-dev/aipc.sh"
+}

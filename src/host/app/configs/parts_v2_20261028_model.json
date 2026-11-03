@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "stage": "OFFLINE_EVALUATED_IN_DISTRIBUTION_ONLY_LIVE_VISUALLY_CHECKED",
+  "checkpoint": "aipc_app/runs/parts_v2/interim1/train/weights/best.pt",
+  "checkpoint_sha256": "bbe3f4000909d5ea22fd8c0017db7e004d95f5ba8b687a56cb0da7f787e25c88",
+  "confidence_threshold": 0.25,
+  "same_class_mask_iou_threshold": 0.5,
+  "imgsz": 1280,
+  "nms_iou": 0.7,
+  "classes": {
+    "0": "screw",
+    "1": "nut",
+    "2": "screw_m6",
+    "3": "nut_m6"
+  },
+  "training_report": "aipc_app/runs/parts_v2/interim1/val_metrics.json",
+  "offline_metrics": {
+    "split": "by session, in-distribution validation only",
+    "mask_map50_95": 0.7286,
+    "box_map50_95": 0.8517,
+    "per_class_mask_map50_95": {
+      "screw": 0.853,
+      "nut": 0.83,
+      "screw_m6": 0.637,
+      "nut_m6": 0.595
+    }
+  },
+  "scope": "Four-class model (M12 screw/nut + bright M6 screw/nut), fixed viewpoint, separated single-layer parts. Validation is in-distribution only (not independent lighting); an independent-lighting set is pending. No physical M6 grasp yet."
+}

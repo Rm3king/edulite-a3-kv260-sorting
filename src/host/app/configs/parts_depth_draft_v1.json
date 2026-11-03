@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "scope": "DEVELOPMENT_INPUT_GATES_NOT_ABSOLUTE_ACCURACY_ACCEPTANCE",
+  "min_depth_m": 0.15,
+  "max_depth_m": 2.0,
+  "min_valid_samples": 6,
+  "min_retained_fraction": 0.8,
+  "max_p90_minus_p10_m": 0.01,
+  "mad_multiplier": 3.0,
+  "min_outlier_window_m": 0.002,
+  "note": "Draft gates for recorded single-layer screw scenes. Passing does not verify metal-surface depth accuracy, extrinsics, TCP, collision clearance or grasp success. Recheck at the final working distance."
+}

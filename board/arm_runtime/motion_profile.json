@@ -1,0 +1,82 @@
+{
+  "schema": "kv260.motion_profile.v1",
+  "evidence": "reports/csp_axis3_diagnosis_20261017/validation.json",
+  "scope": "USER_REQUESTED_AXIS2_AXIS3_4_5A_IDLE_READBACK_PASS_MOTION_WAITING_PRIOR_PASS_AT_3A_4A",
+  "motor_directions": [
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    1
+  ],
+  "motor_offsets_rad": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "position_lower_rad": [
+    -2.79253,
+    0,
+    -4.01426,
+    -1.5708,
+    -1.5708,
+    -1.5708,
+    -0.005880276206880808
+  ],
+  "position_upper_rad": [
+    2.79253,
+    3.66519,
+    0,
+    1.5708,
+    1.5708,
+    1.5708,
+    1.677834153175354
+  ],
+  "velocity_rad_s": [
+    0.06,
+    0.01,
+    0.01,
+    0.06,
+    0.06,
+    0.06,
+    0.04
+  ],
+  "acceleration_rad_s2": [
+    0.15,
+    0.03,
+    0.03,
+    0.15,
+    0.15,
+    0.15,
+    0.15
+  ],
+  "current_caps_a": [
+    1.5,
+    4.5,
+    4.5,
+    2.5,
+    1,
+    1,
+    0.5
+  ],
+  "motor_communication_timeout_ticks": 6000,
+  "tick_s": 0.005,
+  "tick_status": "PL_5MS_SIM_AND_PHYSICAL_TARGET_STREAM_PASS_DIRECT_WIRE_JITTER_PENDING",
+  "maximum_segment_s": 600,
+  "flash_writes": false,
+  "csp_velocity_limit_rad_s": [
+    0.06,
+    0.06,
+    0.06,
+    0.06,
+    0.06,
+    0.06,
+    0.04
+  ]
+}

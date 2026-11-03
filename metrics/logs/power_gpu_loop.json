@@ -1,0 +1,38 @@
+{
+  "backend": "gpu_rocm_pytorch_fp32",
+  "device": "AMD Radeon 890M Graphics",
+  "preprocess_ms": {
+    "n": 500,
+    "p50": 8.95,
+    "p95": 9.43,
+    "p99": 11.78,
+    "max": 16.09
+  },
+  "inference_ms": {
+    "n": 500,
+    "p50": 29.74,
+    "p95": 30.51,
+    "p99": 30.89,
+    "max": 33.99
+  },
+  "postprocess_ms": {
+    "n": 500,
+    "p50": 4.68,
+    "p95": 5.59,
+    "p99": 5.67,
+    "max": 7.05
+  },
+  "total_ms": {
+    "n": 500,
+    "p50": 45.52,
+    "p95": 47.44,
+    "p99": 50.27,
+    "max": 52.91
+  },
+  "frames": 30,
+  "samples": 500,
+  "input": "1920x1080 RGB frame, network 1280 px (736x1280 letterbox)",
+  "conf": 0.25,
+  "iou": 0.7,
+  "batch": 1
+}

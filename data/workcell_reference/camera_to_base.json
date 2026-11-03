@@ -1,0 +1,95 @@
+{
+  "schema": "aipc.camera_to_base.candidate.v1",
+  "calibration_id": "q18_scene_20261026_132258",
+  "source_frame": "D435i color optical frame (x right, y down, z forward)",
+  "target_frame": "A3 SDK legacy model base_link",
+  "units": "m",
+  "point_convention": "column vectors; p_base = R_base_camera @ p_camera + t_base_camera",
+  "T_base_camera": [
+    [
+      0.7094003373706255,
+      0.690694522745687,
+      0.1403290333022731,
+      -0.21888738280488576
+    ],
+    [
+      0.7047395616573785,
+      -0.6924029818374772,
+      -0.1546617631398793,
+      0.1877862680211167
+    ],
+    [
+      -0.009659791582040852,
+      0.20861252836701377,
+      -0.9779506641108812,
+      0.4476647227378744
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "T_camera_base": [
+    [
+      0.7094003373706258,
+      0.7047395616573788,
+      -0.009659791582040887,
+      0.027262718917762375
+    ],
+    [
+      0.6906945227456868,
+      -0.6924029818374771,
+      0.20861252836701377,
+      0.18781961865635968
+    ],
+    [
+      0.1403290333022731,
+      -0.15466176313987928,
+      -0.9779506641108812,
+      0.49755362303719586
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "camera_intrinsics": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1372.0753173828125,
+    "fy": 1374.9302978515625,
+    "cx": 970.2442016601562,
+    "cy": 557.84814453125,
+    "coeffs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model": "distortion.inverse_brown_conrady"
+  },
+  "model_id": "cb2af9a94216c9522ca215a9d9c593b7928f8f28695d9dc4654f345946428e8a",
+  "profile_id": "b054008203cb3a37d029868d6827640d267349068f7a80c0f5d235049729091c",
+  "training_poses": 8,
+  "holdout_poses": 4,
+  "training_pose_consistency_rmse_mm": 2.227269751254639,
+  "holdout_pose_consistency_rmse_mm": 7.302873125999327,
+  "holdout_max_position_mm": 11.153997988765349,
+  "holdout_max_rotation_deg": 1.7672328712886287,
+  "verified": false,
+  "independent_physical_tcp_error_mm": null,
+  "auto_grasp_enabled": false,
+  "evidence": "/opt/edulite/host/reports/scene_recal_20261026/fit/candidate.json",
+  "limitations": [
+    "Held-out board pose consistency, not measured TCP/grasp error.",
+    "Refit after the scene camera was rotated about 7 degrees; 12 planned poses, all 12 accepted (8 training, 4 held out).",
+    "Held-out RMSE 7.30 mm (per pose 1.5/6.0/7.1/11.2 mm) is worse than the 2026-10-23 fit (2.24 mm) and misses the original intent; errors concentrate in poses combining wrist rotations. Cause not verified.",
+    "5 of 12 poses exceed the original 0.5 px PnP screen (max 0.65 px); collection ceiling was set to 1.2 px.",
+    "The wrist camera hides the board's far row in some views; detection used tight crops, 15 rows in one pose."
+  ]
+}

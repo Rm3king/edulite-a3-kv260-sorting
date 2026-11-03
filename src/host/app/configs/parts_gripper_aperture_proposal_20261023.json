@@ -1,0 +1,11 @@
+{
+  "schema": "aipc.gripper.aperture_proposal.v1",
+  "status": "PLANNED_NOT_EXECUTED_NOT_WIDTH_CALIBRATED",
+  "user_preference": "Moderate opening for M12 screw/nut, avoid previous large opening; no extremely tight margin",
+  "screw_preopen_width_m": 0.025,
+  "nut_preopen_width_m": 0.030,
+  "scope": "Initial proposed inner finger gaps for single-layer shaft/outer-nut grasp. Verify actual gap before descent; no millimetre-to-motor-angle calibration asserted.",
+  "motor_target_rad": null,
+  "width_mapping_physically_verified": false,
+  "gripper_motion_this_hover": false
+}

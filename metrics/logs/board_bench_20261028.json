@@ -1,0 +1,32 @@
+{
+ "arm_c_O3_one_core": {
+  "frames": 300,
+  "p50_ms": 14.43,
+  "p95_ms": 14.55,
+  "p99_ms": 14.86,
+  "max_ms": 16.41,
+  "fps": 69.2,
+  "cpu_ms_per_frame": 14.45,
+  "cpu_fraction_of_one_core": 1.0
+ },
+ "pl_busy_poll": {
+  "frames": 300,
+  "p50_ms": 7.78,
+  "p95_ms": 7.83,
+  "p99_ms": 7.86,
+  "max_ms": 8.24,
+  "fps": 128.4,
+  "cpu_ms_per_frame": 7.79,
+  "cpu_fraction_of_one_core": 1.0
+ },
+ "pl_sleep_poll_0.5ms": {
+  "frames": 300,
+  "p50_ms": 7.82,
+  "p95_ms": 7.94,
+  "p99_ms": 8.37,
+  "max_ms": 8.41,
+  "fps": 127.4,
+  "cpu_ms_per_frame": 0.68,
+  "cpu_fraction_of_one_core": 0.087
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "aipc.local_grasp_trial.v1",
+  "status": "SINGLE_SCREW_LAYOUT_OBSERVED_PASS_NOT_GENERAL_CALIBRATION",
+  "enabled_by_default": false,
+  "source_report": "/opt/edulite/host/reports/visual_grasp_20261023_003",
+  "calibration_id": "q18_lifted_20261023_165239",
+  "tcp_in_end_m": [
+    0,
+    0,
+    -0.098
+  ],
+  "tcp_physically_calibrated": false,
+  "local_compensation_base_m": [
+    0.00863568637816367,
+    -0.007186523132585276,
+    -0.0012321625081853811
+  ],
+  "minimum_planned_height_above_surface_m": 0.017,
+  "actual_tip_clearance_m": null,
+  "open_motor_rad": 1.12,
+  "close_command_motor_rad": 1.6,
+  "observed_contact_motor_rad": 1.4681475162506104,
+  "gripper_current_cap_a": 0.3,
+  "gripper_velocity_rad_s": 0.1,
+  "gripper_csp_velocity_cap_rad_s": 0.15,
+  "lift_m": 0.03,
+  "upper_approach_m_s": 0.06,
+  "final_approach_m_s": 0.012,
+  "successful_cycles": 1,
+  "requires_fresh_target_and_start": true,
+  "requires_route_and_retreat_review": true,
+  "only_near_verified_pose": true,
+  "nut_grasp_verified": false
+}

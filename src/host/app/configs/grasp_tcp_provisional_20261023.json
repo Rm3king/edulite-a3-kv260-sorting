@@ -1,0 +1,11 @@
+{
+  "schema": "aipc.provisional_tcp.v1",
+  "units": "m",
+  "frame": "A3 SDK legacy end_effector",
+  "tcp_in_end_m": [0.0, 0.0, -0.098],
+  "source": "aipc_app/integration/workcell/tool_geometry.py TCP_IN_END",
+  "status": "CAD_INITIAL_ESTIMATE_USER_ACCEPTED_FOR_DEVELOPMENT",
+  "physically_calibrated": false,
+  "user_requested_approximate_length_m": 0.1,
+  "note": "Retain the existing 98 mm CAD value rather than changing it to a rounded 100 mm. RGB-D surface coordinate display does not depend on this TCP."
+}

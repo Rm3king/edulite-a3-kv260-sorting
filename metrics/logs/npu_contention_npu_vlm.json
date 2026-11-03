@@ -1,0 +1,11 @@
+{
+  "backend": "npu_vitisai_a8w8",
+  "providers": [
+    "VitisAIExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "n": 60,
+  "p50": 106.95547850627918,
+  "p95": 140.68751485756366,
+  "max": 146.78370600449853
+}

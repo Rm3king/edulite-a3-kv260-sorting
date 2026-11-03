@@ -1,0 +1,1302 @@
+{
+  "status": "NPU_DETECTOR_GRASP_TARGET_ACCEPTANCE",
+  "frames": 80,
+  "npu": {
+    "backend": "npu",
+    "providers": [
+      "VitisAIExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "compile_s": 20.98101568799757,
+    "model": "/opt/edulite/host/reports/npu_parts_v2_20261031/parts_v2_a8w8_736x1280.onnx",
+    "model_sha256": "8248c1f72a20215e374ef451c7dfc0d29f94cd1d01a223267dd530836fda686c",
+    "fallback": null
+  },
+  "gpu_surface_points": 274,
+  "npu_surface_points": 273,
+  "matched": 270,
+  "grasp_allowed_agree": 270,
+  "gpu_only": 4,
+  "npu_only": 3,
+  "base_xyz_difference_mm": {
+    "p50": 0.33,
+    "p95": 1.1,
+    "max": 2.71
+  },
+  "per_class_mm": {
+    "screw": {
+      "n": 34,
+      "p50": 0.35,
+      "p95": 1.05,
+      "max": 1.1
+    },
+    "nut": {
+      "n": 36,
+      "p50": 0.12,
+      "p95": 0.25,
+      "max": 1.03
+    },
+    "screw_m6": {
+      "n": 114,
+      "p50": 0.35,
+      "p95": 1.5,
+      "max": 2.71
+    },
+    "nut_m6": {
+      "n": 86,
+      "p50": 0.2,
+      "p95": 1.02,
+      "max": 1.44
+    }
+  },
+  "npu_predict_ms": {
+    "p50": 70.11,
+    "p95": 84.56
+  },
+  "rows": [
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_13293",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 97.60336599720176,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.32,
+        0.48,
+        1.28
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1432681",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 77.88741200056393,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.08,
+        1.53,
+        0.11,
+        0.32
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1436673",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 63.083561006351374,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.1,
+        0.0,
+        1.02,
+        0.28
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1438824",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 64.4681900012074,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.2,
+        0.32,
+        1.01,
+        1.16
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1441355",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 62.50574400473852,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.07,
+        0.74,
+        0.77
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1444321",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 61.6222039971035,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.26,
+        0.33,
+        0.49
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1448223",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 63.9288420061348,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.14,
+        0.33,
+        0.36
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1450484",
+      "gpu": 1,
+      "npu": 1,
+      "matched": 1,
+      "npu_ms": 60.05825800821185,
+      "grasp_allowed_agree": 1,
+      "mm": [
+        0.15
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1460845",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 65.61216400587,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.22,
+        0.35,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1474731",
+      "gpu": 3,
+      "npu": 2,
+      "matched": 2,
+      "npu_ms": 65.08565599506255,
+      "grasp_allowed_agree": 2,
+      "mm": [
+        1.01,
+        0.0
+      ],
+      "gpu_only": [
+        "nut_m6"
+      ],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1478928",
+      "gpu": 3,
+      "npu": 2,
+      "matched": 2,
+      "npu_ms": 62.10759200621396,
+      "grasp_allowed_agree": 2,
+      "mm": [
+        0.48,
+        0.35
+      ],
+      "gpu_only": [
+        "nut_m6"
+      ],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1483720",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 67.48427300772164,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.27,
+        0.34,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1485424",
+      "gpu": 2,
+      "npu": 2,
+      "matched": 2,
+      "npu_ms": 62.39366599766072,
+      "grasp_allowed_agree": 2,
+      "mm": [
+        1.01,
+        1.44
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1490973",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 62.05765299091581,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.34,
+        0.76,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1496894",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 64.37988100515213,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        1.01,
+        1.02,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1501523",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 74.02135799929965,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        1.09,
+        1.18,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1503645",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 66.3830470002722,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.8,
+        0.34,
+        0.7
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1508353",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 62.79145699227229,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.2,
+        0.77,
+        1.24
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1513982",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 65.36449899431318,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.04,
+        0.48,
+        1.41
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1517812",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 61.961974992300384,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.12,
+        1.85,
+        0.48
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_1518184",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 62.05773199326359,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.24,
+        2.01,
+        1.06
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_19015",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 62.90716399962548,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.12,
+        0.97,
+        0.34,
+        0.3
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_19663",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 76.82516500062775,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.15,
+        0.64,
+        0.48,
+        0.22
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_20747",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 89.76003699353896,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.16,
+        0.97,
+        0.48,
+        0.24
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_24694",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 63.47645100322552,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.25,
+        0.64,
+        0.34,
+        0.38
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_3460",
+      "gpu": 3,
+      "npu": 4,
+      "matched": 3,
+      "npu_ms": 68.3558019954944,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.32,
+        0.34,
+        0.23
+      ],
+      "gpu_only": [],
+      "npu_only": [
+        "nut_m6"
+      ]
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_3849",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 63.84784300462343,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.46,
+        0.0,
+        0.18
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_6433",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 68.05374800751451,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.04,
+        0.72,
+        0.34,
+        0.24
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_6812",
+      "gpu": 3,
+      "npu": 4,
+      "matched": 3,
+      "npu_ms": 70.32192900078371,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.46,
+        0.0,
+        0.13
+      ],
+      "gpu_only": [],
+      "npu_only": [
+        "nut_m6"
+      ]
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_7605",
+      "gpu": 4,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 83.17177298886236,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.46,
+        0.34,
+        1.02
+      ],
+      "gpu_only": [
+        "nut_m6"
+      ],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_8603",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 79.64595100202132,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.32,
+        0.0,
+        0.12
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261028_222315/frame_8938",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 63.86650100466795,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.07,
+        0.46,
+        0.48,
+        0.18
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_107677",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 77.35184200282674,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.32,
+        0.14,
+        0.12,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_109104",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 76.37871299812105,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        1.08,
+        0.08,
+        0.17,
+        1.74
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_110422",
+      "gpu": 4,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 69.77463999646716,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.13,
+        0.15,
+        0.34
+      ],
+      "gpu_only": [
+        "screw"
+      ],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_130372",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 80.99311099795159,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.0,
+        0.09,
+        0.12,
+        0.96
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_15292",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 67.0218799932627,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.5,
+        0.22,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_2583",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 70.3333369892789,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.0,
+        0.27,
+        0.48
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_59394",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 66.02868299523834,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.35,
+        0.33,
+        0.1
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_60761",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 75.05712199781556,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.35,
+        0.33,
+        0.11
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_66350",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 74.12856299197301,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.35,
+        0.06,
+        0.33
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_7264",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 65.56159199681133,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.34,
+        0.34,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_7525",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 64.29562099219766,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.34,
+        0.34,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_793",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 65.77683800423983,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.19,
+        0.48,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_91988",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 78.9711239922326,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.28,
+        0.28,
+        0.0,
+        0.35
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_92546",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 73.35489000251982,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.09,
+        0.18,
+        0.97,
+        1.1
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_93587",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 68.29869099601638,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.1,
+        0.05,
+        0.0,
+        0.35
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_97298",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 73.85989799513482,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.35,
+        0.16,
+        0.36,
+        0.09
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_171220/frame_97619",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 69.06879501184449,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.35,
+        0.11,
+        0.36,
+        0.07
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_54477",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 68.3268400025554,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.48,
+        0.14,
+        0.47
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_56447",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 67.62500600598287,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.48,
+        0.26,
+        0.33
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_57421",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 73.97109500016086,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        1.02,
+        0.1,
+        0.33
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_59005",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 77.81947999319527,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.48,
+        0.2,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_60024",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 73.58568299969193,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.34,
+        0.21,
+        0.25,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_61284",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 75.3444540023338,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.47,
+        0.15,
+        0.21,
+        0.67
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_184508/frame_62115",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 71.28221400489565,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.34,
+        0.15,
+        1.01,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_1254",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 73.10949399834499,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.67,
+        0.04,
+        0.23,
+        0.33
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_15226",
+      "gpu": 3,
+      "npu": 4,
+      "matched": 3,
+      "npu_ms": 69.67633999011014,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.34,
+        0.08,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": [
+        "nut"
+      ]
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_17612",
+      "gpu": 2,
+      "npu": 2,
+      "matched": 2,
+      "npu_ms": 65.85700399591587,
+      "grasp_allowed_agree": 2,
+      "mm": [
+        0.04,
+        0.33
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_22842",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 73.32585800031666,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        1.01,
+        0.2,
+        0.12,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_25327",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 69.82704599795397,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.35,
+        0.21,
+        0.3,
+        0.46
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_27019",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 74.15350999508519,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.2,
+        0.05,
+        0.32,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_27769",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 78.69548900634982,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.02,
+        0.29,
+        1.1,
+        0.48
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_2850",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 69.90506399597507,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.34,
+        0.19,
+        0.33
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_3259",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 80.46846899378579,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.47,
+        0.1,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_192134/frame_39805",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 76.63493399741128,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.51,
+        0.07,
+        0.15,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_201406/frame_1903",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 83.68837700982112,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.33,
+        0.08,
+        0.3,
+        0.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_201406/frame_497829",
+      "gpu": 2,
+      "npu": 2,
+      "matched": 2,
+      "npu_ms": 76.1402240023017,
+      "grasp_allowed_agree": 2,
+      "mm": [
+        0.09,
+        0.28
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_201406/frame_499975",
+      "gpu": 2,
+      "npu": 2,
+      "matched": 2,
+      "npu_ms": 80.50041701062582,
+      "grasp_allowed_agree": 2,
+      "mm": [
+        0.09,
+        0.22
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_201406/frame_6023",
+      "gpu": 0,
+      "npu": 0,
+      "matched": 0,
+      "npu_ms": 64.1958399937721,
+      "grasp_allowed_agree": 0,
+      "mm": [],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_201406/frame_6138",
+      "gpu": 3,
+      "npu": 3,
+      "matched": 3,
+      "npu_ms": 64.96314299874939,
+      "grasp_allowed_agree": 3,
+      "mm": [
+        0.07,
+        0.33,
+        0.48
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261029_201406/frame_963",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 71.91124800010584,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.34,
+        0.14,
+        1.0,
+        0.76
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_101253",
+      "gpu": 5,
+      "npu": 5,
+      "matched": 5,
+      "npu_ms": 78.06246100517455,
+      "grasp_allowed_agree": 5,
+      "mm": [
+        0.49,
+        0.16,
+        0.21,
+        0.11,
+        1.07
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_10505",
+      "gpu": 5,
+      "npu": 5,
+      "matched": 5,
+      "npu_ms": 75.68040399928577,
+      "grasp_allowed_agree": 5,
+      "mm": [
+        0.0,
+        0.06,
+        0.16,
+        1.03,
+        2.34
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_15891",
+      "gpu": 5,
+      "npu": 5,
+      "matched": 5,
+      "npu_ms": 78.186219005147,
+      "grasp_allowed_agree": 5,
+      "mm": [
+        0.34,
+        0.11,
+        0.24,
+        0.13,
+        1.49
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_176081",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 84.51288798823953,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        1.04,
+        0.12,
+        0.1,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_180469",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 74.99150899820961,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.5,
+        0.2,
+        0.1,
+        0.96
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_194038",
+      "gpu": 4,
+      "npu": 4,
+      "matched": 4,
+      "npu_ms": 77.57407199824229,
+      "grasp_allowed_agree": 4,
+      "mm": [
+        0.75,
+        1.03,
+        0.16,
+        0.0
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_2058",
+      "gpu": 5,
+      "npu": 5,
+      "matched": 5,
+      "npu_ms": 96.97865899943281,
+      "grasp_allowed_agree": 5,
+      "mm": [
+        0.34,
+        0.1,
+        0.21,
+        0.55,
+        2.71
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    },
+    {
+      "frame": "/opt/edulite/host/reports/parts_live_20261030_120700/frame_27912",
+      "gpu": 5,
+      "npu": 5,
+      "matched": 5,
+      "npu_ms": 85.43806600209791,
+      "grasp_allowed_agree": 5,
+      "mm": [
+        0.34,
+        0.09,
+        0.08,
+        0.4,
+        0.68
+      ],
+      "gpu_only": [],
+      "npu_only": []
+    }
+  ],
+  "scope": "reference = the production GPU prediction saved with each snapshot; same depth and locate_parts for both"
+}

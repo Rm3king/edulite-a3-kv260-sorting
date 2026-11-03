@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "scope": "FIXED_VIEW_SINGLE_LAYER_GROUPED_20_TRAIN_5_DEV_5_HELD_OUT_TEST",
+  "classes": {
+    "0": "screw",
+    "1": "nut"
+  },
+  "expected_images": 30,
+  "validation_scenes": [
+    "val_001",
+    "val_002",
+    "val_003",
+    "val_004",
+    "val_005"
+  ],
+  "test_scenes": [
+    "test_001",
+    "test_002",
+    "test_003",
+    "test_004",
+    "test_005"
+  ],
+  "related_scene_groups": [],
+  "diagnostic_training_scenes": [
+    "train_001",
+    "train_002",
+    "train_018"
+  ],
+  "review_note": "30 separately arranged layouts at the same fixed view. Manual annotations and observed class counts checked. Empty training scene verified from capture record. 5 held-out test layouts are a small same-session check, not broad generalization or grasp acceptance. Test never participates in training, checkpoint selection or threshold tuning."
+}

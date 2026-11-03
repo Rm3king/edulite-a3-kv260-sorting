@@ -1,0 +1,162 @@
+{
+  "upstream": "https://github.com/RobStride/EDULITE_A3",
+  "commit": "248f6d9661d439a1342ef9ffaba4ea68e06be1fe",
+  "files": [
+    {
+      "file": "6705.stl",
+      "sha256": "f4b1f4c14fc059951a07de4d7b3f089f4c6b9885f8d05b5d3cf61ca84b5babbc",
+      "bytes": 28884
+    },
+    {
+      "file": "6705__2.stl",
+      "sha256": "5a2a984578513ba8469e4aa172528f15bda291c989c0dcc21db844eeca926e57",
+      "bytes": 28884
+    },
+    {
+      "file": "el05.stl",
+      "sha256": "cb7e80e909cda31a4e2e2052db953550c608edc6084457ba2f7d2d5b99516063",
+      "bytes": 1895584
+    },
+    {
+      "file": "el05_l4.stl",
+      "sha256": "387b25c99878d1103df639a7f1cb17fa29be4355f3152d86baef4cbbb18c4891",
+      "bytes": 1918684
+    },
+    {
+      "file": "el05_l5.stl",
+      "sha256": "9f73f4b62d7c11c97832e9f754cd6212589f4ae69832a426f35b0717532560c5",
+      "bytes": 1918684
+    },
+    {
+      "file": "hand_r.stl",
+      "sha256": "847634872ec65212229480036e1394fba5c4e990f7cfcdb5cde0d83584644536",
+      "bytes": 759384
+    },
+    {
+      "file": "l4_l5_link_back.stl",
+      "sha256": "a9faa86422d15cd9d84af88f2a6b050c9a0543d610dfc9e6cc9780037ae39ba7",
+      "bytes": 770184
+    },
+    {
+      "file": "l4_l5_link_back__2.stl",
+      "sha256": "54c3c1465829f5ad42a9b3901dae7d751f9381aee1475feb59846f14b725b6ea",
+      "bytes": 249984
+    },
+    {
+      "file": "l5_shake.stl",
+      "sha256": "68bea026339e64caeace77d2f52130b0a9e9673acbcd7bfa165d6ff9fd792146",
+      "bytes": 334184
+    },
+    {
+      "file": "mainlink_back.stl",
+      "sha256": "e84358d445d91e3ba94b171b85ccc094ea0f4fef2a2e0ce5a7e339177fb41a03",
+      "bytes": 1650784
+    },
+    {
+      "file": "mainlink_motor.stl",
+      "sha256": "3d5f63d3bee302b2eaddc49e97197925f873bd2d3f98b72b8fd0b4fbff3f80df",
+      "bytes": 1405084
+    },
+    {
+      "file": "manifold_solid_brep_39_1.stl",
+      "sha256": "615bac237dca287a769c738e922079e0a847ca60e63f0f3fc1b1b5c72a93fe80",
+      "bytes": 114684
+    },
+    {
+      "file": "manifold_solid_brep_39_1__2.stl",
+      "sha256": "4c25896ad185a7664ca9015b4d55282f292b7e600842db656f596db904f26c62",
+      "bytes": 114684
+    },
+    {
+      "file": "manifold_solid_brep_40_1.stl",
+      "sha256": "daddc8f44a85b10282b55d09a193aac7c520e32662adeb5821742ed63c958a68",
+      "bytes": 485284
+    },
+    {
+      "file": "part_10.stl",
+      "sha256": "2d8a3e76c25680088c3a49e56f2324c5354cb4e885c327655f1122e774052c1d",
+      "bytes": 625584
+    },
+    {
+      "file": "part_15.stl",
+      "sha256": "a9b1369f02e5f8d60ac32f80974ca77ad1a1f5c8054833d836c4369db592dd10",
+      "bytes": 759384
+    },
+    {
+      "file": "part_3.stl",
+      "sha256": "85c5fa4bb249c5d12e487ac8264a29cd9ace30056a18f4dc79cc1c0efba440eb",
+      "bytes": 1190184
+    },
+    {
+      "file": "part_4.stl",
+      "sha256": "e72745497cada68c50fcb0a8712c216833e55f6a4fec83c91030b6c39f7d379d",
+      "bytes": 1065984
+    },
+    {
+      "file": "part_8.stl",
+      "sha256": "09d9208e927acc72dfc907b1730a91fa4f23628ea489fb4c046185a37e77c3a0",
+      "bytes": 1225884
+    },
+    {
+      "file": "part_9.stl",
+      "sha256": "411ae220353c99edc6e69f8958d6190b1f46ada1cea83dce80d273b9c2e85e68",
+      "bytes": 197584
+    },
+    {
+      "file": "part_9__2.stl",
+      "sha256": "ece435e13c8f8eb04202098fed5ed2899b6c7a4fdc60cb04fb6377afe849ee16",
+      "bytes": 438784
+    },
+    {
+      "file": "rack__30_teeth.stl",
+      "sha256": "60f6ddf69bff912a17baad19cf53ac2f86ad5bb786dc696802b8f3418f814114",
+      "bytes": 54284
+    },
+    {
+      "file": "rack__30_teeth__2.stl",
+      "sha256": "389b9c649e8b5788e9bf036575d3de157a6db2d19642b617cc4e80bf4ab50955",
+      "bytes": 54284
+    },
+    {
+      "file": "rack_base.stl",
+      "sha256": "33b7cf4eb57771fb3e42c6dbbc641061e0d33d506d22fbb9ee5f666c703c354f",
+      "bytes": 305884
+    },
+    {
+      "file": "rack_str.stl",
+      "sha256": "cc428e2b4fec752f066ec0b707f9ed39bb06da3cbe54587fd433f1ae17b11d94",
+      "bytes": 133884
+    },
+    {
+      "file": "rs00_l1.stl",
+      "sha256": "ecc30d2da26a52d55faed49fc9f83637166c4a3e808e1619c5256738dc9ca0d1",
+      "bytes": 4591084
+    },
+    {
+      "file": "rs00_l2.stl",
+      "sha256": "cb183b9933e7cdb7b8fe0f74c30f8f39401207de24d96f5ec8e0a7e4b7520c66",
+      "bytes": 4591084
+    },
+    {
+      "file": "rs00_l3.stl",
+      "sha256": "f38d4523304afa9a3849fe63c5244c6d259d760003875de634ccf52a4521c374",
+      "bytes": 4591484
+    },
+    {
+      "file": "small_arm_left.stl",
+      "sha256": "1c2d6e1ad54403bea72b71a4563a027b7ee31ab64943bf804f11f03fc5f6d44b",
+      "bytes": 779284
+    },
+    {
+      "file": "small_arm_right.stl",
+      "sha256": "c375944d632f88742adc90f5b00f58a31bd5c298cf1acd5f1562ebd96ed9a441",
+      "bytes": 4010784
+    },
+    {
+      "file": "spur_gear__14_teeth.stl",
+      "sha256": "13a5b46f3cc245225679b995a8c40f512479bababbb8fefa0d7b55c225d72845",
+      "bytes": 422884
+    }
+  ],
+  "scope": "Original part meshes matching the released legacy kinematic URDF; no new geometry simplification"
+}

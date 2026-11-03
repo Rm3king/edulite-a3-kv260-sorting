@@ -1,0 +1,13 @@
+{
+ "label": "ai_pc_idle",
+ "sensor": {
+  "hwmon": "/sys/class/hwmon/hwmon10",
+  "power1_label": "PPT"
+ },
+ "samples": 296,
+ "mean_w": 23.041533783783784,
+ "min_w": 22.008,
+ "max_w": 29.093,
+ "seconds": 30.000063180923462,
+ "energy_j": 691.2474692988959
+}

@@ -1,0 +1,38 @@
+{
+  "host": "192.168.26.2",
+  "started": "2026-10-31 17:17:58",
+  "icmp": {
+    "sent": 200,
+    "loss_percent": 0.0,
+    "rtt_ms": {
+      "n": 200,
+      "p50": 0.169,
+      "p95": 0.218,
+      "p99": 0.25,
+      "max": 0.257,
+      "mean": 0.175395
+    },
+    "summary_min_avg_max_mdev": [
+      0.119,
+      0.177,
+      0.24,
+      0.023
+    ]
+  },
+  "ssh_command_ms": {
+    "n": 40,
+    "p50": 507.58958799997345,
+    "p95": 563.4393469954375,
+    "p99": 2429.1343910008436,
+    "max": 2429.1343910008436,
+    "mean": 556.8888290486939
+  },
+  "throughput": {
+    "board_to_host_MBps": 32.26899715706072,
+    "host_to_board_MBps": 28.249307918144396
+  },
+  "motor_commands_sent": 0,
+  "wrist_frame_http": {
+    "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+  }
+}

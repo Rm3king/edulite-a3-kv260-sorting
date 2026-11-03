@@ -1,0 +1,7 @@
+{
+  "empty_scene": "train_001",
+  "fit_roi_uv": [[1020, 310], [1330, 110], [1600, 570], [1320, 740]],
+  "ransac_threshold_m": 0.002,
+  "max_heldout_p95_m": 0.003,
+  "scope": "Manual conservative interior patch of reviewed empty right tray. Fixed before inspecting plane residuals. Not a reachable ROI or tray boundary."
+}

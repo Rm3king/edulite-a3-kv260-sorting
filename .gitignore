@@ -1,0 +1,18 @@
+# Generated workspaces and local runtime outputs
+/build/work/
+/build/work.lock
+/build/host_work/
+__pycache__/
+*.py[cod]
+*.jou
+*.wdb
+*.vcd
+.Xil/
+.venv*/
+.env
+.env.*
+!.env.example
+.ssh/
+id_rsa*
+id_ed25519*
+*.pem

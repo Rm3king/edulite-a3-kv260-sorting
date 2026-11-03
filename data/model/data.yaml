@@ -1,0 +1,4 @@
+path: /opt/edulite/host/runs/parts_v2/interim1/dataset
+train: images/train
+val: images/val
+names: {0: 'screw', 1: 'nut', 2: 'screw_m6', 3: 'nut_m6'}

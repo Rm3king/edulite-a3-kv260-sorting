@@ -1,0 +1,10 @@
+# Keep release checksums valid on every checkout.
+* -text
+*.png binary
+*.jpg binary
+*.pdf binary
+*.onnx binary
+*.pt binary
+*.gz binary
+*.bit binary
+*.xsa binary

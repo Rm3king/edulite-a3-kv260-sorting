@@ -1,0 +1,26 @@
+metric,category,primary_score_item,value,unit,conditions,test_count_or_duration,evidence_file,status
+task_success_rate,core,system_20,,%,Predeclare success/failure/intervention; physical trials,,,WAITING
+sensor_to_motion_p50,core,system_20,,ms,Acquisition to physical actuator response; synchronized clocks and uncertainty,,,WAITING
+sensor_to_motion_p95,core,system_20,,ms,Same endpoint definition as P50,,,WAITING
+sensor_to_motion_p99,core,system_20,,ms,Same endpoint definition as P50,,,WAITING
+sensor_to_motion_max,core,system_20,,ms,Same endpoint definition as P50,,,WAITING
+detection_map_50_95,core,ai_20,,ratio,Independent annotated test set; fixed model/version/precision/input,,,WAITING
+inference_batch1_latency,core,ai_20,,ms,Final AMD AI PC ROCm>=7.14.0; list preprocessing/inference/postprocessing separately,,,WAITING
+total_perception_latency,core,ai_20,,ms,Same batch=1 run; input acquisition/pre/post boundaries recorded,,,WAITING
+sustained_inference_fps,core,ai_20,,frames/s,Sustained run; duration and warmup declared,,,WAITING
+pl_execution_p99_jitter,core_and_control,fpga_25,,us,Fixed execution period; release and bus output timestamps separated; compare same-condition baseline,,,WAITING
+deadline_miss_rate,control,fpga_25,,ratio,Define deadline and observation point before run,,,WAITING
+tracking_rmse,control,fpga_25,,rad,Command trajectory vs timestamped joint feedback,,,WAITING
+application_rtt,core,cooperation_20,,ms,Application protocol; same-end monotonic clock; report P50/P95/P99/Max,,,WAITING
+command_timeout_rate,core,cooperation_20,,ratio,Accepted/rejected/late sequence IDs; controlled test link,,,WAITING
+clock_offset_uncertainty,cooperation,cooperation_20,,us,Validate offset/drift before cross-device one-way claims,,,WAITING
+continuous_operation,reliability,engineering_15,,s,Real task workload with fault and intervention log,,,WAITING
+fault_recovery_time,reliability,engineering_15,,ms,Declared fault start and verified recovered state,,,WAITING
+clean_deploy_success,reuse_optional,engineering_15,,ratio,Actually tested clean environment; not inferred from scripts existing,,,WAITING
+final_design_wns,resources_timing,fpga_25,,ns,Final contest design implemented at declared clock; training result not substituted,,,WAITING
+final_design_resources,resources_timing,fpga_25,,report,Final LUT/FF/BRAM/DSP and clock; complete design scope,,,WAITING
+dynamic_task_success_rate,core,system_20,,%,Freeze obstacle motion and scenario; include stops/retries/failures; physical trials,,,WAITING
+full_candidate_check_p99,core,fpga_25,,ms,Real replay; include FK geometry limits PS DMA and PL; optimized final AI PC comparison,,,WAITING
+collision_false_negative_count,geometry,fpga_25,,count,Conservative robot obstacle coverage; swept-motion and boundary reference cases,,,WAITING
+scene_to_commit_p99,core,cooperation_20,,ms,Acquisition mapped clock through actual commit; report clock uncertainty,,,WAITING
+geometry_proxy_coverage,geometry,fpga_25,,report,A3 links gripper carried object workspace; conservative coverage and sampling error bounds,,,WAITING

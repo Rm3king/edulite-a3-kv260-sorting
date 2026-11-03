@@ -1,0 +1,8 @@
+{
+  "adapter": "reports/task_lora_v2_20261020/adapter",
+  "base_model": "models/qwen25vl3b",
+  "role": "CANDIDATE_TEXT_TOOL_ADAPTATION",
+  "training_data": "ENGINEERING_AUTHORED_SYNTHETIC_NOT_HUMAN_REVIEWED",
+  "regression_report": "reports/task_eval_v2_20261020/report.json",
+  "physical_motion_from_model": false
+}

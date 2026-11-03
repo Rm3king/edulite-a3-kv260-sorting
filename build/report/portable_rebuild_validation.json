@@ -1,0 +1,24 @@
+{
+  "status": "PASS_CREATE_AND_RTL",
+  "source_bundle_sha256": "63f5d6ec99ae3e0a2009358574f140ec5592304031edf15f4e9c6b01e527ffcd",
+  "source_files": 326,
+  "vivado_version": "2025.2",
+  "vivado_stage": "create",
+  "project_references_within_relocated_workspace": 34,
+  "rtl_regression": {
+    "status": "PASS",
+    "backend": "Vivado XSim 2025.2",
+    "tests": 16,
+    "source_hashes_match_final_bundle": true,
+    "evidence": "portable_rtl_validation.json"
+  },
+  "entry_negative_cases": {
+    "damaged_archive_rejected": true,
+    "unowned_work_directory_rejected": true,
+    "parallel_operation_rejected": true,
+    "packaging_without_build_rejected": true,
+    "deployment_help_no_network": true
+  },
+  "full_bitstream_rebuild": "NOT_RUN",
+  "hardware_deployment": "NOT_RUN"
+}

@@ -1,0 +1,16 @@
+{
+ "label": "gpu_detect",
+ "sensor": {
+  "hwmon": "/sys/class/hwmon/hwmon10",
+  "power1_label": "PPT"
+ },
+ "samples": 213,
+ "mean_w": 55.62962910798122,
+ "min_w": 43.033,
+ "max_w": 63.014,
+ "seconds": 22.777464151382446,
+ "energy_j": 1267.1018827617438,
+ "frames": 500,
+ "energy_per_frame_j": 2.5342037655234875,
+ "fps": 21.951521761901365
+}

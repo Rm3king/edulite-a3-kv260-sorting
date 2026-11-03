@@ -1,0 +1,26 @@
+{
+  "vendor/el_a3_sdk/kinematics.py": {
+    "source": "EDULITE_A3/el_a3_sdk/el_a3_sdk/kinematics.py",
+    "sha256": "833af6040dd46d53457d2827bd8c4b3792d25e078d2a660e9d0259d3123e7054"
+  },
+  "vendor/el_a3_sdk/data_types.py": {
+    "source": "EDULITE_A3/el_a3_sdk/el_a3_sdk/data_types.py",
+    "sha256": "177a1d37502d693441ed676e428741716d20cd83f2851f088a7c96162c58409d"
+  },
+  "vendor/el_a3_sdk/protocol.py": {
+    "source": "EDULITE_A3/el_a3_sdk/el_a3_sdk/protocol.py",
+    "sha256": "aec741eb6329b874541e9022488d08e288b1411cf0c8d1a2d7ecebf6c4a0f021"
+  },
+  "vendor/LICENSE": {
+    "source": "EDULITE_A3/LICENSE",
+    "sha256": "28b230c6ce4c5b518321781b9e673b71badea6552f5e90c588126d28bf897994"
+  },
+  "model/el_a3_legacy.urdf": {
+    "source": "EDULITE_A3/el_a3_sdk/resources/urdf/el_a3_legacy.urdf",
+    "sha256": "21cd19dab9e7f3e72857d2e752cc24ab05a3b054b5bc7557fa2fe1c213be0ffe"
+  },
+  "model/inertia_params.yaml": {
+    "source": "EDULITE_A3/el_a3_sdk/resources/config/inertia_params.yaml",
+    "sha256": "31ea8afc0e4e568463f04593787e8dd322253e609ae64107a9eaad1e5311a719"
+  }
+}

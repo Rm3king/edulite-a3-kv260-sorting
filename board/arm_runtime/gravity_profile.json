@@ -1,0 +1,13 @@
+{
+  "schema": "kv260.gravity_feedforward.v1",
+  "source": "EDULITE_A3 inertia and ELA3Interface defaults; wrist scale refined after measured static A/B",
+  "kp": [80,80,80,80,80,80],
+  "kd": [4,4,4,4,4,4],
+  "gravity_joint_scale": [1,1,1,1,1,1],
+  "motor_model": ["RS00","RS00","RS00","EL05","EL05","EL05"],
+  "motor_torque_limit_nm": [1.5,4.5,5.5,2.5,1,1],
+  "following_envelope_rad": 0.08,
+  "endpoint_tolerance_rad": 0.06,
+  "scope": "attended gravity-only A/B; no zero-gravity, friction or full inverse-dynamics compensation",
+  "note": "MotorStudio used joint4 scale 2; measured static A/B showed 0.331 deg off vs -0.395 deg on, so use nominal scale 1 for next comparison. 0x7018 is not assumed to cap MIT torque; 0x700b is verified. Gains/scales fixed within each A/B."
+}

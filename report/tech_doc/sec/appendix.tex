@@ -1,0 +1,129 @@
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
+\section{大模型协作记录}\label{app:collab}
+
+\subsection{智能体工作流}
+
+本作品使用大模型工具辅助开发、调试、测试和文档整理，分工如下（图~\ref{fig:agents}）：
+
+\begin{itemize}
+  \item \textbf{Claude Code}：参与应用集成、板端视觉、性能分析与提交材料整理；通过代码、日志、测试和仪器数据核对实现。
+  \item \textbf{Codex}：参与控制链路开发、故障排查、集成验证与材料审查；结合 AMD Ross 完成七轴插补核的 HLS 检查与构建（附录~C）。
+  \item \textbf{交叉评审}：两个智能体结合源代码和实测记录复核改动；离线测试通过后，再在操作员授权范围内验证硬件。
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\footnotesize,
+  a/.style={draw=blue!60!black,fill=blue!6,rounded corners=2pt,align=center,minimum height=10mm,text width=32mm},
+  h/.style={draw=orange!70!black,fill=orange!8,rounded corners=2pt,align=center,minimum height=10mm,text width=32mm},
+  ar/.style={-{Stealth[length=1.6mm]},semithick},lab/.style={font=\scriptsize,inner sep=1.5pt}]
+  \node[h] (u) at (0,0) {开发者\\目标 · 规则 · 物理确认};
+  \node[a] (c) at (52mm,0) {开发智能体\\编码 · 测试 · 排障 · 文档};
+  \node[a] (x) at (52mm,22mm) {Codex + AMD Ross\\HLS 可综合检查与构建};
+  \node[a] (g) at (52mm,-22mm) {交叉评审\\代码 · 测试 · 实测记录};
+  \node[h] (e) at (104mm,0) {证据\\日志 · 测试 · 仪器数据};
+  \node[h] (s) at (104mm,-22mm) {归档\\规则文件 · 技能包};
+  \draw[ar] (u)--node[lab,above]{任务与边界}(c);
+  \draw[ar] (c)--node[lab,above]{结论}node[lab,below]{+ 证据路径}(e);
+  \draw[ar,<->] (x)--(c); \draw[ar,<->] (g)--(c); \draw[ar] (e)--(s);
+  \draw[ar] (s.south) -- ++(0,-6mm) -| (u.south);
+  \node[lab,anchor=north] at (52mm,-36mm) {写入规则文件，作为后续会话的检查依据};
+\end{tikzpicture}
+\caption{大模型协作工作流}\label{fig:agents}
+\end{figure}
+
+\subsection{提示词与规则}
+
+协作的核心是把经验写成明文规则，作为每次会话的固定上下文。代表性规则（第一条为原文摘录，其余为要点）：
+
+\begin{itemize}
+  \item \textbf{硬件授权边界}：“正常完整返回本轮承托起点、反馈确认后自动失能已获授权；中途悬空、故障保持或不能确认返回时，这个授权不等于自动撤力矩。不增加任何软件异常无条件 reset，不自动 JTAG，不改零点或电机 Flash。”
+  \item \textbf{进程管理}：只按 PID 停止进程；启动的服务登记拥有者，结束时清理，不留孤儿进程。
+  \item \textbf{文档写作}：先给结论和数据，再给机制；每个能力点回答做了什么、实测多少、证据在哪；数字只来自原始文件，不手填。
+  \item \textbf{问题处理}：保存失败记录，定位后修改并补充回归验证；不用放宽保护代替修复。
+\end{itemize}
+
+\subsection{自我纠错轨迹（节选）}
+
+\begin{table}[H]
+\centering\small
+\caption{典型问题的定位与纠错过程}\label{tab:selfcorr}
+\begin{tabularx}{\linewidth}{@{}p{2.4cm} Y Y Y@{}}
+\toprule
+现象 & 定位到的根因 & 纠正措施 & 结果与记录 \\
+\midrule
+NPU 量化后全部漏检 & 检测头的框坐标与类别分数共用一个 INT8 尺度，分数被压成零 & 解码节点保持浮点，卷积主体留在 NPU & 抓取目标层面逐点验收通过，NPU 成为默认后端 \\
+确认托住后机械臂未失能 & 确认标记写进了上一次运行的目录 & 按当前拥有者进程定位运行目录 & 补单元测试，写入踩坑清单 \\
+关闭预览窗口后检测程序退出 & OpenCV 窗口句柄失效抛出异常 & 窗口丢失后转为无界面继续运行，并增加相机自愈 & 检测不再受界面操作影响 \\
+零重力首次启动无响应 & 电机断电重启后运行模式复位为 0 & 启动前增加只写运行模式的基线步骤 & 此后启动直接进入零重力 \\
+结束零重力后 PL 残留故障 & 终止信号打断了板端的清理流程 & 改为写入控制标记，由板端自行完成结束序列 & 结束流程完整执行 \\
+数字孪生显示滞后 & 轮询间隔与链路延迟叠加 & 轮询 100→50\,ms，按实测速度外推约 90\,ms & 减轻三维显示滞后 \\
+5\ms 周期偶发晚点约 1\ms & 晚点超过 250\us 的周期全部与位置读取事务同时出现 & 周期锚定绝对栅格，晚点不累积；改进方向写入失败分析 & 用逻辑分析仪复测验证 \\
+早期“末端减振”百分比 & 后续外部测量无法复现 & 主动撤回该结论 & 关节 RMSE 与末端振铃基线分开报告 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+完整的提示词、模型回答与纠错记录见代码包 \path{report/llm_collaboration.md}。
+
+\section{技能包}
+
+技能包位于代码包 \texttt{skill/} 目录，每项都有 \texttt{README.md}，写明适用范围、使用方法、依赖条件和已有验证记录。其中，KV260构建入口从提交包自动展开工程源码与依赖；规则模板与排查清单可按新项目调整。
+
+\begin{table}[H]
+\centering\small
+\caption{技能包清单}\label{tab:skills}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}p{1.8cm} Y@{}}
+\toprule
+目录 & 类型 & 内容与适用范围 \\
+\midrule
+\path{ryzen_ai_yolo_npu} & 案例模板 & YOLO11n-seg 四类分割案例 → Quark A8W8 → Ryzen AI NPU 评估与服务化 → 与 GPU 的抓取目标级验收与自动回退；适用于需要常驻端侧推理、并与大模型共享 GPU 的视觉任务 \\
+\path{kv260_pl_workcell_ops} & 工作流 & KV260 固件构建、部署、板级自检、板端运行时内容寻址打包、工位启停与安全停止规程；适用于 KV260/K26 + CAN 执行器 \\
+\path{can_wire_timing} & 校验脚本 & 逻辑分析仪导出 → CAN 扩展帧解码（去填充）→ 周期间隔与偏差统计 → 直方图与时序图；面向本项目 CAN 扩展帧；迁移时调整帧分类与周期 \\
+\path{embodied_pitfalls} & 踩坑清单 & 机械臂与 KV260 联调的常见故障：触发条件、现象、定位方法、处理步骤 \\
+\path{llm_hardware_collab} & 提示词工作流 & 硬件授权边界模板、证据优先的写作规则、上机前检查清单；适用于让智能体参与真实硬件开发 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{AMD Ross 使用心得与指南}
+
+\subsection{我们怎么用的}
+
+AMD Ross（\texttt{amd-ross-agentic-ai-assistant} 2026.9.1）以插件形式安装到 Codex 中，我们在开发七轴插补核 \texttt{trajectory\_eval} 时调用了它的两个 HLS 技能：
+
+\begin{enumerate}
+  \item \texttt{hls-synthesizable}：在写 C++ 时逐项检查可综合子集：无动态内存、无递归、无虚函数、无系统调用、无不受支持的指针转换，并把测试台与被综合代码分开判断。\doccite{ref:hls}
+  \item \texttt{hls-run-flow}：按 C 仿真 → C 综合 → C/RTL 联合仿真的顺序执行真实的命令行流程，并汇总报告。
+\end{enumerate}
+
+结果：C 仿真 7009 项检查全部通过，与 double 参考的最大位置误差 2.98e-8\,rad；综合目标 100\,MHz，延迟 3 个周期，II=1，资源估计 140 DSP、11246 LUT、4046 FF；C/RTL 联合仿真 1003 次顶层事务全部通过。该核最终集成进 PL 的 \texttt{trajectory\_stream}，每 5\ms 为七个电机求值。
+
+\subsection{使用心得}
+
+\begin{itemize}
+  \item \textbf{把可综合检查前置}：以往写完再综合才发现不可综合的写法，Ross 技能将检查提前到编码阶段，便于尽早发现不支持的写法。
+  \item \textbf{流程标准化}：\texttt{hls-run-flow} 把仿真、综合、联合仿真固定成一条命令链，智能体每次改动后都能完整重跑，结果可比。
+  \item \textbf{适合与智能体配合}：技能是结构化的检查清单与流程描述，便于在不同修改中重复执行，也便于人工核对遗漏项。
+  \item \textbf{结论以日志为准}：技能给出的是检查与流程，最终的功能与时序结论仍以仿真和综合日志为准，我们把日志与报告一并归档。
+\end{itemize}
+
+\subsection{快速上手指南}
+
+\begin{enumerate}
+  \item 从 AMD 官方仓库获取 Ross，按说明以插件形式安装到所用的编码智能体中，记录版本与源码提交号。
+  \item 在 HLS 工程目录中，先让智能体调用 \texttt{hls-synthesizable} 审查顶层函数与其调用链，修正所有提示项。
+  \item 准备 C 测试台与 double 精度参考模型，再调用 \path{hls-run-flow}，依次执行 C 仿真、C 综合和联合仿真。
+  \item 检查报告中的 II、延迟、资源与时序，按需调整 \texttt{pragma} 后重跑；把日志与报告随工程提交。
+  \item Ross 的 Vivado MCP 服务端需登录 AMD 账号下载；下载后按官方说明在本机启动服务，并在智能体的 MCP 配置中登记，即可让智能体直接驱动 Vivado 工程操作。
+\end{enumerate}
+
+\section{复现入口}
+
+\begin{enumerate}
+  \item \textbf{硬件}：按第二部分表~\ref{tab:bom} 与 PMOD 接线连接；KV260 与机械臂分别供电，千兆网线直连 AI PC。
+  \item \textbf{FPGA}：\texttt{build/} 提供构建脚本、位流与部署产物，\texttt{sim/} 提供仿真回归。工具链配置与操作步骤见 \path{skill/kv260_pl_workcell_ops/README.md}。
+  \item \textbf{板端}：\texttt{board/} 经打包脚本按内容摘要发布到 KV260。
+  \item \textbf{AI PC}：依赖锁定文件在 \texttt{src/host/deploy/}，模型说明在 \texttt{data/model/}。按 \path{report/docs/reproduce.md} 配置环境、模型与工位标定，通过只读检查后启动控制台，确认现场状态再执行任务。
+  \item \textbf{指标复测}：\texttt{metrics/scripts/} 中每个脚本的头部注释给出运行位置、命令与预期输出，原始结果在 \texttt{metrics/logs/}。
+\end{enumerate}

@@ -1,0 +1,1 @@
+{"bitstream": "kv260-can.bit.bin", "sha256": "76034028fb0fb7f812cb5777ce066c9772f5815967d72c7a85b01658337df567", "registers": "840 ctrl, 848 step, 84c lease_us, 850..864 targets, 870..884 applied, 888 writes, 88c clamps, 890 age, 894 id, 898 rejects, 8a0..8b4 limits"}

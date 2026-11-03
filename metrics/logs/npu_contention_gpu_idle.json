@@ -1,0 +1,8 @@
+{
+  "backend": "gpu_rocm_pytorch_fp32",
+  "device": "AMD Radeon 890M Graphics",
+  "n": 60,
+  "p50": 42.286390002118424,
+  "p95": 67.46656535397051,
+  "max": 69.16111099417321
+}

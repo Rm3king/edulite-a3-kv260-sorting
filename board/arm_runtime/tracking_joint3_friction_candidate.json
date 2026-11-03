@@ -1,0 +1,74 @@
+{
+  "schema": "kv260.attended_bounded_autotune.v1",
+  "source": "Joint3-only 0.15Nm (75% of exploratory reverse-path odd torque ~0.20Nm); NOT independently calibrated friction",
+  "kp": [
+    80,
+    60,
+    60,
+    80,
+    80,
+    80
+  ],
+  "kd": [
+    4,
+    5,
+    5,
+    5,
+    4,
+    4
+  ],
+  "gravity_joint_scale": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "motor_model": [
+    "RS00",
+    "RS00",
+    "RS00",
+    "EL05",
+    "EL05",
+    "EL05"
+  ],
+  "motor_torque_limit_nm": [
+    1.5,
+    4.5,
+    5.5,
+    2.5,
+    1,
+    1
+  ],
+  "following_envelope_rad": 0.08,
+  "endpoint_tolerance_rad": 0.06,
+  "scope": "Attended full-pick ABBA with fixed IR external metrology; not default",
+  "note": "Keep speed scale0.05, gravity and all gains fixed; only joint3 desired-velocity smooth friction feedforward changes.",
+  "guard_kp": [
+    240,
+    240,
+    240,
+    180,
+    180,
+    180
+  ],
+  "guard_kd": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "inverse_dynamics_scale": 0.0,
+  "friction_coulomb_nm": [
+    0,
+    0,
+    0.15,
+    0,
+    0,
+    0
+  ],
+  "friction_velocity_scale_rad_s": 0.05
+}

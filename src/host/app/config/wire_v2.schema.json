@@ -1,0 +1,653 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kv260:screwcell:wire:v2",
+  "title": "Screwcell v2 envelope and message payloads",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "payload",
+    "request_id",
+    "schema_version",
+    "sequence",
+    "session_id",
+    "source_monotonic_ns",
+    "type"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "type": {
+      "enum": [
+        "EXECUTE_PLAN",
+        "HEARTBEAT",
+        "HELLO",
+        "PAUSE",
+        "PREPARE_PICK_PLACE",
+        "PREPARE_SKILL",
+        "QUERY_TASK",
+        "RESULT",
+        "RESUME",
+        "RETURN_SUPPORTED",
+        "SCENE",
+        "STATUS",
+        "SYNC",
+        "TELEMETRY",
+        "VERIFY_RESULT"
+      ]
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{0,96}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "source_monotonic_ns": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "HELLO"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "client_id",
+              "role"
+            ],
+            "properties": {
+              "client_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "role": {
+                "enum": [
+                  "control",
+                  "observer"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "SYNC"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "t1_ns"
+            ],
+            "properties": {
+              "t1_ns": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9223372036854775807
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "HEARTBEAT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [],
+            "properties": {}
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "STATUS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [],
+            "properties": {}
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "SCENE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "scene_id",
+              "source_kind",
+              "objects"
+            ],
+            "properties": {
+              "scene_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "source_kind": {
+                "enum": [
+                  "live",
+                  "recorded",
+                  "synthetic"
+                ]
+              },
+              "objects": {
+                "type": "array",
+                "maxItems": 64,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "object_id",
+                    "part_class"
+                  ],
+                  "properties": {
+                    "object_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+                    },
+                    "part_class": {
+                      "enum": [
+                        "screw",
+                        "nut"
+                      ]
+                    }
+                  }
+                }
+              },
+              "calibration_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "PREPARE_PICK_PLACE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id",
+              "scene_id",
+              "object_id",
+              "model_id",
+              "calibration_id",
+              "layout_id",
+              "tool_id",
+              "frame",
+              "grasp_tcp",
+              "place_tcp",
+              "gripper_preset_id",
+              "part_class",
+              "valid_until_kv_monotonic_ns",
+              "planning_start_joint_rad",
+              "approach_height_m",
+              "lift_height_m"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "scene_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "object_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "model_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "calibration_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "layout_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "tool_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "frame": {
+                "const": "robot_base"
+              },
+              "grasp_tcp": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "position_m",
+                  "quaternion_xyzw"
+                ],
+                "properties": {
+                  "position_m": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "quaternion_xyzw": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "place_tcp": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "position_m",
+                  "quaternion_xyzw"
+                ],
+                "properties": {
+                  "position_m": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "quaternion_xyzw": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "gripper_preset_id": {
+                "const": "release_20261019_empty"
+              },
+              "part_class": {
+                "enum": [
+                  "screw",
+                  "nut"
+                ]
+              },
+              "valid_until_kv_monotonic_ns": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9223372036854775807
+              },
+              "planning_start_joint_rad": {
+                "type": "array",
+                "minItems": 7,
+                "maxItems": 7,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "approach_height_m": {
+                "type": "number",
+                "minimum": 0.01,
+                "maximum": 0.15
+              },
+              "lift_height_m": {
+                "type": "number",
+                "minimum": 0.01,
+                "maximum": 0.15
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "PREPARE_SKILL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id",
+              "skill_id",
+              "model_id",
+              "valid_until_kv_monotonic_ns"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "skill_id": {
+                "const": "empty_pick_return_v1"
+              },
+              "model_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "valid_until_kv_monotonic_ns": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9223372036854775807
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "EXECUTE_PLAN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "plan_id",
+              "plan_digest"
+            ],
+            "properties": {
+              "plan_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "plan_digest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "QUERY_TASK"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "after_event": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9223372036854775807
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "VERIFY_RESULT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id",
+              "result",
+              "evidence_id"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              },
+              "result": {
+                "enum": [
+                  "SUCCESS",
+                  "FAIL",
+                  "UNKNOWN"
+                ]
+              },
+              "evidence_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "RESULT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "TELEMETRY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "owner",
+              "backend"
+            ],
+            "properties": {
+              "owner": {
+                "type": "object"
+              },
+              "backend": {
+                "enum": [
+                  "mock",
+                  "kv260-plan-only",
+                  "kv260-motion",
+                  "mujoco"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "PAUSE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "RESUME"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "RETURN_SUPPORTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "task_id"
+            ],
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.:-]{1,96}$"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

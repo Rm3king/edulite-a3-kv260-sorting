@@ -1,0 +1,74 @@
+{
+  "schema": "kv260.attended_bounded_autotune.v1",
+  "source": "Experimental partial friction feedforward from repeated reverse-path telemetry; not identified Kt or production calibration",
+  "kp": [
+    80,
+    60,
+    60,
+    80,
+    80,
+    80
+  ],
+  "kd": [
+    4,
+    5,
+    5,
+    5,
+    4,
+    4
+  ],
+  "gravity_joint_scale": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "motor_model": [
+    "RS00",
+    "RS00",
+    "RS00",
+    "EL05",
+    "EL05",
+    "EL05"
+  ],
+  "motor_torque_limit_nm": [
+    1.5,
+    4.5,
+    5.5,
+    2.5,
+    1,
+    1
+  ],
+  "following_envelope_rad": 0.08,
+  "endpoint_tolerance_rad": 0.06,
+  "scope": "Matched full-pick ABBA only; user-authorized continued tuning",
+  "note": "Only 25% of exploratory direction-odd torque median for joints2/3, smoothly zero at desired rest; baseline bank disables friction, no Flash writes",
+  "guard_kp": [
+    240,
+    240,
+    240,
+    180,
+    180,
+    180
+  ],
+  "guard_kd": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "inverse_dynamics_scale": 0.0,
+  "friction_coulomb_nm": [
+    0,
+    0.1,
+    0.05,
+    0,
+    0,
+    0
+  ],
+  "friction_velocity_scale_rad_s": 0.05
+}

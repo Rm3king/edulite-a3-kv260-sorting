@@ -1,0 +1,41 @@
+{
+  "backend": "npu_vitisai_a8w8",
+  "providers": [
+    "VitisAIExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "preprocess_ms": {
+    "n": 100,
+    "p50": 16.85,
+    "p95": 21.28,
+    "p99": 23.35,
+    "max": 23.35
+  },
+  "inference_ms": {
+    "n": 100,
+    "p50": 51.92,
+    "p95": 84.23,
+    "p99": 88.98,
+    "max": 88.98
+  },
+  "postprocess_ms": {
+    "n": 100,
+    "p50": 2.51,
+    "p95": 4.94,
+    "p99": 63.97,
+    "max": 63.97
+  },
+  "total_ms": {
+    "n": 100,
+    "p50": 72.09,
+    "p95": 109.42,
+    "p99": 131.95,
+    "max": 131.95
+  },
+  "frames": 30,
+  "samples": 100,
+  "input": "1920x1080 RGB frame, network 1280 px (736x1280 letterbox)",
+  "conf": 0.25,
+  "iou": 0.7,
+  "batch": 1
+}

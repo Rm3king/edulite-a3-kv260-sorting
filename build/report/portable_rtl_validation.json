@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "test": "tx_timing_monitor",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS tx_timing_monitor: exact statistics, wrap, per-axis isolation, histogram, read-frame rejection, non-gating reset"
+      ]
+    },
+    {
+      "test": "tracking_monitor",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS tracking_monitor"
+      ]
+    },
+    {
+      "test": "rx_buffer",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS RX buffer: 256-frame capacity, 9-bit occupancy via unchanged AXI ABI, full protection, all payloads/timestamps/order"
+      ]
+    },
+    {
+      "test": "axi_lite_request",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS AXI checks=650 split AW/W, backpressure, exactly-once, reset"
+      ]
+    },
+    {
+      "test": "tx_rejection",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS tx_rejection checks=127"
+      ]
+    },
+    {
+      "test": "can_engine",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS engine checks=292 extended CAN, ACK, stuffing patterns, hardware RX, feedback table, deadlines, lease, pending-TTL, motion bounds, feedback-loss"
+      ]
+    },
+    {
+      "test": "wire_receive",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS independent wire serializer: good extended frame accepted; wrong CRC rejected; passive TX"
+      ]
+    },
+    {
+      "test": "trajectory_stream",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS trajectory_stream 140 packets: seven-axis HLS, 1032 Q24-to-float vectors, 112 fractional-phase packets, two segments, wrap, queue, hold, pause-at-end, partial commit, bounds, guard, deadline"
+      ]
+    },
+    {
+      "test": "trajectory_correction",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS trajectory_correction ticks_checked=179"
+      ]
+    },
+    {
+      "test": "trajectory_wide",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS trajectory_wide 147 degree-seven samples, legacy compatibility, phase validation, partial commit, capability and atomic bounds"
+      ]
+    },
+    {
+      "test": "csp_stream_can",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS seven-axis CSP CAN: 21 independent wire-received HLS targets, all IDs/values, 5ms periods within 100us serialization allowance, no expired/overflow/fault"
+      ]
+    },
+    {
+      "test": "csp_wide_can",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS degree-seven CSP CAN: 35 independent wire-received HLS targets, all IDs/values, 5ms periods within 100us serialization allowance, no expired/overflow/fault"
+      ]
+    },
+    {
+      "test": "mit_trajectory",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS MIT trajectory: 35 position/velocity/torque HLS samples, hybrid gripper, 220-word atomic commit, pause/hold, torque rejection, moving underrun"
+      ]
+    },
+    {
+      "test": "mit_stream_can",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS MIT gravity CAN: six Type1 q/v/tau/PD and CSP gripper, 35 independent wire-received HLS targets, all IDs/values, 5ms periods within 100us serialization allowance, no expired/overflow/fault"
+      ]
+    },
+    {
+      "test": "filtered_damping",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS filtered damping checks=2000: signed scale, zero gain bit-exact, stale fallback, LPF, bounded correction/total torque"
+      ]
+    },
+    {
+      "test": "mit_damping_can",
+      "status": "PASS",
+      "evidence": [
+        "TEST_PASS MIT filtered-damping CAN: first correction -118 codes, later stale bypass, invalid metadata rejected, untouched q/v/gains/other axes; six Type1 q/v/tau/PD and CSP gripper, 35 independent wire-received HLS targets, all IDs/values, 5ms periods within 100us serialization allowance, no expired/overflow/fault"
+      ]
+    }
+  ],
+  "physical_can": "NOT_RUN",
+  "simulator": "xsim",
+  "sources": {
+    "third_party/opencores_can/can_acf.v": "404e8581e035a45b6830bba6a1e87c7899e7f54d4e3940c33ba1a25d1f20b4d6",
+    "third_party/opencores_can/can_bsp.v": "b808f51cb5c6a17595c6a8851759fb0c3a2bb5fd189ae56682003c70fc8d9250",
+    "third_party/opencores_can/can_btl.v": "7f6c42ea3d790b1643389581792ed293266d98eb0a3c1d01e6ddc777482e8335",
+    "third_party/opencores_can/can_crc.v": "ae60397523f22b1ddcff600838949c6ded70d801d54d105ca0ad0a51013fdc07",
+    "third_party/opencores_can/can_defines.v": "10a47046d4140f130e9bb7d161e4995d67291d33fbdb8e77903956f46bb10665",
+    "third_party/opencores_can/can_fifo.v": "54fcf4dbfa3f0b40d24d17b758256a0e5fabe3cd45531cf2fb1a702665ae4940",
+    "third_party/opencores_can/can_ibo.v": "1234afea06de3c9ac244b8c0643024cf1e09345aab546d7787661e573eda455f",
+    "third_party/opencores_can/can_register.v": "691454933514031ddd0f3694e1ffe68b19822ec9113b30f88dc1f2c3ca8e4fd0",
+    "third_party/opencores_can/can_register_asyn.v": "4b83cdf224c3560f740b44d9db9d7c78e7dff6139e98685796e16baea5605561",
+    "third_party/opencores_can/can_register_asyn_syn.v": "308ee96d28a92179915ed0ce90a8345b7b4cc4e515e245d6f00eca2fcabb9e61",
+    "third_party/opencores_can/can_register_syn.v": "2c8b90f432acf65ed23f6b88923648f02f5e45f5727608a7011f873c633437b7",
+    "third_party/opencores_can/can_registers.v": "ddd9d7b22c73c23c1aa52dd8e348f71a912957f963ac6dbd257a5916e0f0cae3",
+    "third_party/opencores_can/can_top.v": "ba9f813bdee1c2d65cfa55dbf5ab9e6e33c305e30ea02b71cb9e89854bf9f921",
+    "third_party/opencores_can/timescale.v": "6a61cf8db88af470f457dadffcf627cd8f325a00fa3d8b239093520cf7fa94d8",
+    "contest/kv260_can/rtl/axi_lite_request.sv": "b819074a7f38f7447ca80c9dbcfe5c14015d5f2ab682fed35cf468dd9a92ac21",
+    "contest/kv260_can/rtl/can_engine.sv": "505d37c77abe48690798ea73f0871b690c1ae32791b45c5a891ef2b7e3e15750",
+    "contest/kv260_can/rtl/filtered_damping.sv": "41db6458d893b8a217edb126aba38a6067523d84c075e3992b5c9d0dca6bdb5d",
+    "contest/kv260_can/rtl/frame_fifo.sv": "35e72d3a633e152f4849657f98751b5bac7ce1518a06da6ab24742ab3acf9cdb",
+    "contest/kv260_can/rtl/mit_trajectory_stream.sv": "c83c623bcd8c64c6bc37a3a71e203a4d2eee90c86a31b3072cde89a856c725e2",
+    "contest/kv260_can/rtl/tracking_monitor.sv": "044df30f1660c8d26564459cc790413b3ea85ad257fdf615504e83822bf12d11",
+    "contest/kv260_can/rtl/trajectory_stream.sv": "9b631ddd0115dcadf9c9fa7a174a140bed8532a02442c7e94cc91494e12d0a17",
+    "contest/kv260_can/rtl/tx_timing_monitor.sv": "ed534713989236186e6ad021ae04d3c085c4373463f3720285f0d5dd0bc42edd",
+    "contest/kv260_can/rtl/kv260_can_top.v": "7397a7febd6bc93add172ad627deec292d95c63ff0c78f1e1162d4082f5d06af",
+    "contest/kv260_can/rtl/trajectory_eval.v": "7013115acbce2fae30db3d4ffdb125a6a1a6de236ceb73d8ee7c5a23e0a4b780",
+    "contest/kv260_can/rtl/trajectory_eval_mul_48s_41ns_89_1_1.v": "51940c3761019bbf0939244a3b7b149930f5022441add972bb07733d26bca395",
+    "contest/kv260_can/rtl/trajectory_eval_mul_56s_41ns_97_1_1.v": "6b25dc157eaf031776ddbcf502906aaa412e583ddd1ac6d657cff356a363d443",
+    "contest/kv260_can/rtl/trajectory_eval_sparsemux_7_2_32_1_1.v": "667adb96eb352350fa368936033ba414c62f68e04536d0bfe30ddb154b63534c",
+    "contest/kv260_can/rtl/trajectory_eval_wide.v": "1574295cdbf44b928d056c6894b947f76b7ac1e89d6bf704d676eb143eb9123c",
+    "contest/kv260_can/rtl/trajectory_eval_wide_mul_48s_25ns_73_1_1.v": "7c6759f4cf5a4daf96619709457a5867bd6e65471869f372f2a0bc0fda4ca9ce",
+    "contest/kv260_can/rtl/trajectory_eval_wide_mul_56s_25ns_81_1_1.v": "df71cb2d9ac939a12d08ace9723ae11bdf046766faae46e37cbb1e18878683b1",
+    "contest/kv260_can/rtl/trajectory_eval_wide_sparsemux_7_2_32_1_1.v": "1a7b67b6a0bb5c929e0b046ec70391f37a006a81adb6e9636b3e1f117a4aa524",
+    "contest/kv260_can/tb/tb_axi_lite_request.sv": "6d71f22e64f2eb27765c55d853b9f7ed45f718949f093f8effa2c68e6d87bf5c",
+    "contest/kv260_can/tb/tb_can_engine.sv": "e7b086ff330df5146961e6b549340cf6d77e0f0fb7bb351ae813f61bcfc318b2",
+    "contest/kv260_can/tb/tb_csp_stream_can.sv": "becb84187a51b1f29c1192f90c56f61a8505f297c6726af4fe0f1ae976027520",
+    "contest/kv260_can/tb/tb_csp_wide_can.sv": "ffa738cc6d1fd633d020c589f1600bedca3257cf3da749b207faa9f7bfa80e9a",
+    "contest/kv260_can/tb/tb_filtered_damping.sv": "2aef7c8229987b0ffb906378219e88c69c464ba8520d437a92b2d48205aa6848",
+    "contest/kv260_can/tb/tb_mit_damping_can.sv": "595df59a317a08701f69be1842440201ba8cf2005f8aaa601996a5c776485263",
+    "contest/kv260_can/tb/tb_mit_stream_can.sv": "777cbe5b829c0400891dffe5699cd6fc7dca9fa14ce07406ca33529fc382f280",
+    "contest/kv260_can/tb/tb_mit_trajectory.sv": "5fe7f78843ecee6bd7dac327fe4a7d8d1f3e9636393712f5c157347890d838bb",
+    "contest/kv260_can/tb/tb_rx_buffer.sv": "8b8fffedce12ffe84dfdf81c24f78a3e9e173eac6c9507e1642b5b179bf6e166",
+    "contest/kv260_can/tb/tb_tracking_monitor.sv": "58eb1daf6ee818f26a618fa9c12716f625f2d8ddb7585bd8d4881f9ec942ab88",
+    "contest/kv260_can/tb/tb_trajectory_correction.sv": "a60102430ac063ed101d0ff27d758cf6874e78faa64eb0cef299c616114fb54f",
+    "contest/kv260_can/tb/tb_trajectory_stream.sv": "43597bea8f09ec572efd62a04949a55823ad273a50f8dd8c42e1ecabee2de663",
+    "contest/kv260_can/tb/tb_trajectory_wide.sv": "97df61396ca756e2ac93501838f43720a28e41d6351a8ddfb9221ed537c138e0",
+    "contest/kv260_can/tb/tb_tx_rejection.sv": "8131aaa604402116cea7e5d537db7180b8a7cdee47df50e60214856b8245ada2",
+    "contest/kv260_can/tb/tb_tx_timing_monitor.sv": "5550be4fdc35f027f0813ecc52eab42ae0b747e9b91afb77c1bc358b453941f9",
+    "contest/kv260_can/tb/tb_wire_receive.sv": "20ed54d0dafe1d3ffc746d61a3ab549813968f3733f0c095c8910788d6e2962e",
+    "contest/kv260_can/tb/mit_packets.mem": "cea890f824fb7677ea571b88c0052bee28717858634c8ca2293d1fd8c5e53298",
+    "contest/kv260_can/tb/mit_stage.mem": "a12794a31cbfaead56d165604c1de6eeaf606e3332b685d523da61261d508a53",
+    "contest/kv260_can/tb/qfloat_vectors.mem": "f2bcad8ca4fc7e3503f2e8f28024284d24636cb58f2678298d665062ce53f49a",
+    "contest/kv260_can/tb/wide_coefficients.mem": "4dec741a2fae19be8cb1acd9c35d026c8ccf038358399acb680caef0a3ee66a6",
+    "contest/kv260_can/tb/wide_expected.mem": "a449a650ca4fe71322113f6402819d3a7d75e4989e626f99e5a80a381c4d0d97",
+    "contest/kv260_can/run_tests.py": "8a1ebc4b3bb605f606ec59202f44c6f99d2faa7bc386f5a7cea9805b51d1e352"
+  }
+}

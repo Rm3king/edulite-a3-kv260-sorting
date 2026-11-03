@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "FIRST_BATCH_DEVELOPMENT_VALIDATION_NOT_SEALED_TEST",
+  "classes": {"0": "screw", "1": "nut"},
+  "expected_images": 25,
+  "validation_scenes": [
+    "screws_scene_003", "screws_scene_006", "screws_scene_007",
+    "screws_scene_0012", "screws_scene_0019"
+  ],
+  "related_scene_groups": [
+    ["screws_scene_009", "screws_scene_0010"],
+    ["screws_scene_0013", "screws_scene_0014", "screws_scene_0015"],
+    ["screws_scene_0017", "screws_scene_0018"],
+    ["screws_scene_0021", "screws_scene_0022"]
+  ],
+  "review_note": "Reviewed all 25 manual-outline previews. Related layouts and subsets above stay together. Single capture batch, backgrounds and some individual object poses remain correlated; this is development validation, not evidence of independent generalization. Collect fresh arrangements later for an untouched test.",
+  "diagnostic_training_scenes": ["screws_scene_005", "screws_scene_0024", "screws_scene_0025"]
+}

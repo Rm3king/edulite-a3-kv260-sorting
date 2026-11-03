@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-16",
+  "source": "User-reported part specifications in the current conversation",
+  "verification_scope": "USER_REPORTED_NOMINAL_SPECIFICATIONS",
+  "usage": "Inventory only; incomplete geometry, not an execution or calibration configuration",
+  "screw": {
+    "designation": "M12x60",
+    "nominal_thread_diameter_mm": 12,
+    "nominal_length_mm": 60,
+    "measured_shank_diameter_mm": null,
+    "measured_under_head_length_mm": null,
+    "measured_graspable_length_mm": null,
+    "measured_head_dimensions_mm": null
+  },
+  "nut": {
+    "designation": "M12",
+    "color": "black",
+    "nominal_thread_diameter_mm": 12,
+    "measured_width_across_flats_mm": null,
+    "measured_height_mm": null
+  },
+  "trays": {
+    "count": 2,
+    "reported_dimensions_mm": {
+      "length": 200,
+      "width": 150,
+      "height": 38
+    },
+    "dimension_reference": "SELLER_SPECIFIED_INNER_OR_OUTER_UNCONFIRMED",
+    "dimension_source": "User confirmed these are seller-listed dimensions, not measured usable inner dimensions",
+    "measured_usable_inner_dimensions_mm": null,
+    "measured_inside_floor_to_rim_height_mm": null
+  },
+  "physical_grasp_test": {
+    "status": "USER_REPORTED_HELD_WITHOUT_SLIP",
+    "result_source": "User statement in the current conversation",
+    "user_reported_held_without_slipping": true,
+    "grasp_from_tray_verified": null,
+    "lift_and_transfer_verified": null,
+    "assistant_observed": false,
+    "passed": null,
+    "scope_note": "Basic holding without slipping is user-confirmed. Full tray pickup, lifting and transfer acceptance is not established by this statement."
+  }
+}

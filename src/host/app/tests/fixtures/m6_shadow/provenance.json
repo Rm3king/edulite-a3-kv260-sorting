@@ -1,0 +1,68 @@
+[
+  {
+    "file": "retry1_frame_0.png",
+    "source": "/opt/edulite/host/reports/live_task_20261101_131409_a9d3c0/raw_frames/it00_144663600807868/frame_0.png",
+    "sha256": "763291d5e65ea236c4fb0e76ca67a8889adb35b8b0644578f25aa2f5d49e0c61",
+    "head_direction": "up",
+    "grip_reference_px": [
+      197,
+      194
+    ],
+    "reference_note": "Approximate visual shaft position just below head; not physical calibration"
+  },
+  {
+    "file": "retry1_frame_1.png",
+    "source": "/opt/edulite/host/reports/live_task_20261101_131409_a9d3c0/raw_frames/it00_144663600807868/frame_1.png",
+    "sha256": "5bb16a48707c7f55e2216e9ff59cec82cf3ce3321e20e41efbf154dc079bade4",
+    "head_direction": "up",
+    "grip_reference_px": [
+      197,
+      194
+    ],
+    "reference_note": "Approximate visual shaft position just below head; not physical calibration"
+  },
+  {
+    "file": "retry1_frame_2.png",
+    "source": "/opt/edulite/host/reports/live_task_20261101_131409_a9d3c0/raw_frames/it00_144663600807868/frame_2.png",
+    "sha256": "bbedd595fa1032252d54dc5e19dcf88ebe18bfdb08106b7396a7ea6456454212",
+    "head_direction": "up",
+    "grip_reference_px": [
+      197,
+      194
+    ],
+    "reference_note": "Approximate visual shaft position just below head; not physical calibration"
+  },
+  {
+    "file": "retry2_frame_0.png",
+    "source": "/opt/edulite/host/reports/live_task_20261101_131501_1f641f/raw_frames/it00_144714708364093/frame_0.png",
+    "sha256": "cd23a0df5cfb323715e9024874d4246d7e45178e1dd4aef1c1b8d398a3f8603c",
+    "head_direction": "up",
+    "grip_reference_px": [
+      199,
+      197
+    ],
+    "reference_note": "Approximate visual shaft position just below head; not physical calibration"
+  },
+  {
+    "file": "retry2_frame_1.png",
+    "source": "/opt/edulite/host/reports/live_task_20261101_131501_1f641f/raw_frames/it00_144714708364093/frame_1.png",
+    "sha256": "8388b6e25b50cb953cee56cc5fca572c4d1d86bb827be6121dbb9b0d020749a7",
+    "head_direction": "up",
+    "grip_reference_px": [
+      199,
+      197
+    ],
+    "reference_note": "Approximate visual shaft position just below head; not physical calibration"
+  },
+  {
+    "file": "retry2_frame_2.png",
+    "source": "/opt/edulite/host/reports/live_task_20261101_131501_1f641f/raw_frames/it00_144714708364093/frame_2.png",
+    "sha256": "8fa9ca56eac0b123bf5d8969379a8963ddba29c8f56374906ff040ad07bce424",
+    "head_direction": "up",
+    "grip_reference_px": [
+      199,
+      197
+    ],
+    "reference_note": "Approximate visual shaft position just below head; not physical calibration"
+  }
+]

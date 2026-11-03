@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>端侧智能体分拣台</title>
+<style>
+:root{--bg:#0f1318;--panel:#171d24;--panel2:#1e2630;--line:#2a3441;--text:#e8edf3;--muted:#8a98a8;--accent:#4aa3ff;--ok:#3ecf8e;--warn:#f5b84a;--bad:#ff6b6b;--think:#b18cff}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:var(--bg);color:var(--text);font:14.5px/1.45 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;display:flex;flex-direction:column}
+header{flex:none;display:flex;gap:12px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:16px;margin:0;font-weight:650;letter-spacing:.5px}
+.chips{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.chip{padding:2px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;background:var(--panel2);white-space:nowrap}
+.chip b{color:var(--text);font-weight:600}.chip.on{border-color:var(--ok);color:var(--ok)}
+main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:10px;padding:10px}
+.col{display:flex;flex-direction:column;gap:10px;min-height:0;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:0}
+.card h2{font-size:12px;margin:0 0 8px;color:var(--muted);font-weight:600;letter-spacing:1px}
+.grow{flex:1;display:flex;flex-direction:column}
+#plancard{overflow:auto}
+.cam{position:relative;flex:none;width:100%;aspect-ratio:960/540;background:#000;border-radius:7px;overflow:hidden}
+.cam img.main{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.cam img.inset{position:absolute;right:8px;bottom:8px;width:25%;height:auto;border:2px solid var(--line);border-radius:6px;background:#000}
+.tag{position:absolute;left:8px;top:8px;padding:1px 8px;border-radius:6px;background:rgba(0,0,0,.55);color:#dfe7ef;font-size:12px}
+.stats{flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.stat .k{color:var(--muted);font-size:11.5px}.stat .v{font-size:19px;font-weight:650;line-height:1.2}
+.bar{height:6px;border-radius:3px;background:var(--line);position:relative;margin-top:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);transition:width .4s}.bar u{position:absolute;top:0;bottom:0;width:2px;background:var(--bad)}
+#order{display:flex;gap:8px}
+#order input[type=text]{flex:1;min-width:0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font-size:15.5px}
+#order input[type=text]:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{cursor:pointer;border:0;border-radius:8px;padding:0 22px;font-size:15px;font-weight:600;background:var(--accent);color:#fff}
+button:disabled{opacity:.45;cursor:not-allowed}button.danger{background:var(--bad)}
+.examples{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 6px}
+.examples span{cursor:pointer;padding:2px 9px;border-radius:999px;border:1px dashed var(--line);color:var(--muted);font-size:12px}
+.examples span:hover{color:var(--text);border-color:var(--accent)}
+.ready{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px}.ready input{width:17px;height:17px}
+.plan{color:var(--text);font-size:14.5px;line-height:1.7}
+.result{margin-bottom:8px;padding:10px 12px;font-size:16px;border-radius:8px;background:var(--panel2);border:1px solid var(--ok);display:none}.result.show{display:block}
+.tl{flex:1;min-height:0;overflow:auto;padding-right:4px}
+.ev{display:grid;grid-template-columns:44px 52px 1fr;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.ev time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.badge{align-self:start;text-align:center;border-radius:5px;padding:0 5px;font-size:11.5px;font-weight:600;color:#fff;background:var(--muted)}
+.b-understand{background:var(--think)}.b-observe{background:#3a86d8}.b-decide{background:#d08a1f}.b-act{background:var(--accent)}
+.b-verify,.b-result{background:var(--ok)}.b-align{background:#1f9e9e}.b-timing{background:#5b6b7d}.b-review{background:var(--think)}.b-think{background:#7a5fc0}
+.review{margin-bottom:8px;padding:9px 12px;font-size:14.5px;border-radius:8px;background:rgba(177,140,255,.08);border:1px solid var(--think);display:none}.review.show{display:block}
+.review small{color:var(--muted);display:block;margin-top:3px}
+.align{margin-top:8px;display:none}.align.show{display:block}
+.align table{width:100%;border-collapse:collapse;font-size:13.5px}.align td,.align th{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left}
+.align th{color:var(--muted);font-weight:600;font-size:12px}.align .c{color:#1fcfcf;font-weight:600}.align .s{color:var(--warn);font-weight:600}.b-fault,.b-stop,.b-error{background:var(--bad)}.b-operator,.b-progress{background:#5b6b7d}.b-order{background:#222}
+#fault{display:none;flex:none;margin:8px 10px 0;padding:10px 14px;border-radius:10px;background:rgba(255,107,107,.12);border:1px solid var(--bad);gap:12px;align-items:center;flex-wrap:wrap}
+#fault.show{display:flex}#fault p{margin:0;flex:1;min-width:240px}
+.state{display:inline-block;padding:1px 10px;border-radius:999px;font-size:12.5px;font-weight:600;background:var(--panel2);border:1px solid var(--line)}
+.state.RUNNING{color:var(--accent);border-color:var(--accent)}.state.DONE,.state.READY{color:var(--ok);border-color:var(--ok)}.state.FAULT_HELD,.state.ERROR{color:var(--bad);border-color:var(--bad)}
+@media(max-width:900px){main{grid-template-columns:1fr;overflow:auto}html,body{overflow:auto}}
+</style>
+</head>
+<body>
+<header>
+  <h1>端侧智能体分拣台</h1>
+  <span id="state" class="state">空闲</span>
+  <div class="chips" id="platform"></div>
+</header>
+<div id="fault"><p><b>机械臂进入故障保持。</b>它正在保持力矩但没有保证。请先托住机械臂，确认托稳后点右边按钮，板端才会失能。</p>
+  <label class="ready"><input type="checkbox" id="supported"> 我已托住机械臂</label>
+  <button class="danger" id="confirm" disabled>确认已承托，失能</button></div>
+<main>
+  <div class="col">
+    <div class="card">
+      <div class="cam"><img id="head" class="main" alt=""><span class="tag" id="headtag">头部 RGB-D · YOLO 本地检测</span><img id="wrist" class="inset" alt=""><canvas id="twin" width="960" height="540" style="position:absolute;inset:0;width:100%;height:100%;display:none;background:#0b0f14"></canvas></div>
+      <div class="stats">
+        <div class="stat"><div class="k">源盘 大螺丝/大螺母/小螺丝/小螺母</div><div class="v" id="counts">—</div></div>
+        <div class="stat"><div class="k">J2 肩部（红线 95 °C）</div><div class="v" id="t2">—</div><div class="bar"><i id="b2" style="width:0"></i><u style="left:93%"></u></div></div>
+        <div class="stat"><div class="k">J3 肘部（红线 95 °C）</div><div class="v" id="t3">—</div><div class="bar"><i id="b3" style="width:0"></i><u style="left:93%"></u></div></div>
+      </div>
+    </div>
+    <div class="card grow" id="plancard">
+      <h2>任务计划与结果</h2>
+      <div class="result" id="result"></div>
+      <div class="review" id="review"></div>
+      <div class="plan" id="plan">还没有任务。输入一句话开始。</div>
+      <div class="align" id="align"><table><thead><tr><th>零件</th><th>腕部对准方式</th><th>用时 / 轮数</th><th>结果</th></tr></thead><tbody id="alignrows"></tbody></table></div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <h2>下达任务</h2>
+      <form id="order"><input type="text" id="text" placeholder="例如：把所有零件放到左盘" autocomplete="off"><button id="send">发送</button></form>
+      <div class="examples" id="examples"></div>
+      <label class="ready"><input type="checkbox" id="ready"> 机械臂已在支撑位，允许自动执行（不勾选则只理解并规划）</label>
+      <label class="ready"><input type="checkbox" id="skip"> 不等降温，直接开始（也可以在指令里说“不用等降温”）</label>
+    </div>
+    <div class="card" id="teachcard">
+      <h2>示教 · 零重力</h2>
+      <div class="ready"><input type="checkbox" id="teachsupport"><span>我已用手托住机械臂（进入零重力后手松开，机械臂会缓慢下沉）</span></div>
+      <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap">
+        <button id="tstart" disabled style="padding:8px 16px">进入零重力</button>
+        <button id="tfinish" disabled class="danger" style="padding:8px 16px">托稳，结束零重力</button>
+        <span class="state" id="tstate">未运行</span></div>
+      <div id="tjoints" class="plan" style="font-variant-numeric:tabular-nums;font-size:13.5px;color:var(--muted)">—</div>
+      <div style="display:flex;gap:8px;margin:8px 0"><input type="text" id="tname" placeholder="位置名称，例如 左盘槽1" style="flex:1;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text)">
+        <button id="tpose" disabled style="padding:8px 14px">记录当前位置</button></div>
+      <div style="display:flex;gap:8px"><button id="tmark" disabled style="padding:8px 14px">开始录制轨迹</button><span class="chip" id="trec">未录制</span></div>
+      <div style="margin:8px 0"><button id="treplay" disabled style="padding:8px 14px">回放轨迹（仿真，机械臂不动）</button></div>
+      <div class="align show" style="margin-top:8px"><table><thead><tr><th>已记录</th><th>关节角 J1–J6（度）</th></tr></thead><tbody id="tposes"></tbody></table></div>
+    </div>
+    <div class="card grow">
+      <h2>智能体在做什么</h2>
+      <div class="tl" id="timeline"></div>
+    </div>
+  </div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const KIND={order:'指令',understand:'理解',observe:'观察',decide:'决策',act:'执行',verify:'核对',result:'结果',fault:'故障',stop:'停止',error:'错误',operator:'操作员',progress:'进度',think:'思考',align:'对准',review:'复核',timing:'耗时'};
+const NAME={screw:'大螺丝',nut:'大螺母',screw_m6:'小螺丝',nut_m6:'小螺母'};
+const EXAMPLES=['把所有零件放到左盘','把所有零件放到左盘，不用等降温','一颗大螺丝和一个小螺母放到左盘','两颗小螺丝放到左盘','所有零件放到左盘，小螺母不要动'];
+let next=0,busy=false;
+$('examples').innerHTML=EXAMPLES.map(t=>`<span>${t}</span>`).join('');
+$('examples').onclick=e=>{if(e.target.tagName=='SPAN'){$('text').value=e.target.textContent;$('text').focus()}};
+function backendChips(p){const d=p.detector;if(!d)return'';const npu=d.backend=='npu';
+  if(typeof twinOn==='undefined'||!twinOn)$('headtag').textContent='头部 RGB-D · YOLO 分割 · '+(npu?'NPU INT8（Ryzen AI）':'GPU（ROCm）'+(d.backend=='gpu_fallback'?' · NPU 已回退':''))+(d.inference_ms?` · ${d.inference_ms.toFixed(0)} ms`:'');
+  return `<span class="chip on">零件检测 <b>${npu?'NPU':'GPU'}</b></span><span class="chip on">大模型 <b>GPU</b></span>`}
+const showBackend=p=>{const e=$('backendchips');if(e)e.innerHTML=backendChips(p)};
+setInterval(()=>fetch('/api/platform').then(r=>r.json()).then(showBackend).catch(()=>{}),3000);
+fetch('/api/platform').then(r=>r.json()).then(p=>{
+  $('platform').innerHTML=[`<span class="chip"><b>${p.cpu.replace(/\(.*?\)/g,'').replace('w/ Radeon 890M','')}</b></span>`,`<span class="chip">内存 <b>${p.memory_gb} GB</b></span>`,`<span class="chip">ROCm <b>${p.rocm}</b></span>`,`<span class="chip">${p.gpu}</span>`,`<span class="chip ${p.model?'on':''}">本地千问 <b>${p.model?'已就绪 · 离线':'未启动'}</b></span>`,'<span id="backendchips"></span>'].join('');showBackend(p)});
+function ev(e){const m=Math.floor(e.t/60),s=(e.t%60).toFixed(0).padStart(2,'0');
+  return `<div class="ev"><time>${m}:${s}</time><span class="badge b-${e.kind}">${KIND[e.kind]||e.kind}</span><span>${e.text.replace(/</g,'&lt;')}</span></div>`}
+function temp(id,bid,v){if(v==null)return;$(id).textContent=v.toFixed(0)+' °C';$(bid).style.width=Math.min(100,(v-20)/80*100)+'%';$(bid).style.background=v>=90?'var(--bad)':v>=78?'var(--warn)':'var(--ok)'}
+async function poll(){
+  try{
+    const s=await (await fetch('/api/state?since='+next)).json();
+    if(s.events.length){const tl=$('timeline');tl.insertAdjacentHTML('afterbegin',s.events.map(ev).reverse().join(''))}
+    next=s.next;busy=s.busy;$('send').disabled=busy;
+    const names={IDLE:'空闲',PLANNING:'规划中',READY:'已规划',RUNNING:'执行中',DONE:'完成',STOPPED:'已停止 · 失能',FAULT_HELD:'故障保持',ERROR:'出错'};
+    $('state').textContent=names[s.state]||s.state;$('state').className='state '+s.state;
+    if(s.counts)$('counts').textContent=['screw','nut','screw_m6','nut_m6'].map(c=>s.counts[c]||0).join(' / ');
+    if(s.temperatures){temp('t2','b2',s.temperatures['2']);temp('t3','b3',s.temperatures['3'])}
+    if(s.plan&&s.plan.batches)$('plan').innerHTML=s.plan.batches.map((b,i)=>`<div><b>第 ${i+1} 批</b>　${b.parts.map(p=>NAME[p]||p).join('、')}　→ 槽 ${b.slots.join('、')}<br><span style="color:var(--muted);font-size:13px">${b.reason}</span></div>`).join('');
+    const r=$('result');if(s.report){r.className='result show';r.innerHTML=`<b>${s.report.text}</b>`}else r.className='result';
+    const a=s.alignments||[];$('align').className=a.length?'align show':'align';
+    $('alignrows').innerHTML=a.map(x=>`<tr><td>${NAME[x.part]||x.part||''}</td><td class="${x.mode=='continuous'?'c':'s'}">${x.mode=='continuous'?'板端连续对准（PL 修正通道）':'停顿对准（AI PC 规划）'}</td>`+
+      `<td>${x.mode=='continuous'?x.seconds.toFixed(2)+' s':x.rounds+' 轮'}</td><td>${x.mode=='continuous'?(x.status=='CONVERGED'?'收敛':x.status):'抓取'}</td></tr>`).join('');
+    const v=$('review'),rv=s.report&&s.report.review;
+    if(rv){v.className='review show';v.innerHTML=`${rv.source=='vlm'?'🧠 <b>本地视觉大模型复核</b>':'<b>运行记录</b>'}：${rv.summary.replace(/</g,'&lt;')}<small>${rv.source=='vlm'?`Qwen2.5-VL · AMD GPU · ${rv.seconds.toFixed(1)} s · 依据执行前/后两张图 + 运行记录`:''}</small>`}else v.className='review';
+    $('fault').className=s.fault?'show':'';
+  }catch(e){}
+}
+function img(id,url){const i=$(id);const n=new Image();n.onload=()=>{i.src=n.src};n.onerror=()=>{};n.src=url+'?'+Date.now()}
+setInterval(poll,700);const shots=()=>{img('head','/api/head.jpg');img('wrist','/api/wrist.jpg')};shots();setInterval(shots,600);poll();
+$('order').onsubmit=async e=>{e.preventDefault();const text=$('text').value.trim();if(!text||busy)return;
+  const r=await fetch('/api/order',{method:'POST',body:JSON.stringify({text,ready:$('ready').checked,skip_cooling:$('skip').checked})});const j=await r.json();
+  if(!j.ok)alert(j.error);else $('text').value=''};
+let tState='IDLE',tRecording=false;
+const tpost=(path,body)=>fetch('/api/teach/'+path,{method:'POST',body:JSON.stringify(body||{})}).then(r=>r.json()).then(j=>{if(!j.ok)alert(j.error);return j});
+$('teachsupport').onchange=()=>{$('tstart').disabled=!$('teachsupport').checked||tState=='ACTIVE'};
+$('tstart').onclick=async()=>{$('tstart').disabled=true;$('tstate').textContent='启动中…';await tpost('start',{confirmation:'已托住，开始零重力'})};
+$('tfinish').onclick=async()=>{$('tfinish').disabled=true;$('tstate').textContent='结束中…';await tpost('finish')};
+$('tpose').onclick=async()=>{const n=$('tname').value.trim();if(!n){alert('先输入位置名称');return}await tpost('pose',{name:n});$('tname').value=''};
+$('tmark').onclick=async()=>{const stop=tRecording;await tpost('mark',{action:stop?'stop':'start',name:$('tname').value.trim()||'轨迹'})};
+async function tpoll(){
+  try{const s=await (await fetch('/api/teach/state')).json();tState=s.state;
+    const names={IDLE:'未运行',STARTING:'启动中',ACTIVE:'零重力运行中',FINISHING:'结束中',ENDED:'已结束 · 已失能',FAILED:'失败',LOST:'连接中断'};
+    $('tstate').textContent=names[s.state]||s.state;$('tstate').className='state '+(s.state=='ACTIVE'?'RUNNING':s.state=='ENDED'?'DONE':s.state=='FAILED'?'ERROR':'');
+    const on=s.state=='ACTIVE';$('tfinish').disabled=!on;$('tpose').disabled=!on;$('tmark').disabled=!on;$('tstart').disabled=!$('teachsupport').checked||on||s.state=='STARTING'||s.state=='FINISHING';
+    const l=s.live;$('tjoints').textContent=l?('J1–J6：'+l.joint_deg.slice(0,6).map(x=>x.toFixed(1).padStart(7)).join(' ')+'　夹爪 '+l.gripper_rad.toFixed(2)+(l.torque_saturated&&l.torque_saturated.some(x=>x)?'　⚠ 力矩受限':'')):'—';
+    const m=s.marks||[];tRecording=!!(m.length&&m[m.length-1].end===undefined&&on);$('tmark').textContent=tRecording?'停止录制轨迹':'开始录制轨迹';
+    $('trec').textContent=tRecording?'● 录制中：'+m[m.length-1].name:(s.trajectories&&s.trajectories.length?'已录 '+s.trajectories.map(t=>t.name+' '+t.seconds+'s').join('、'):'未录制');
+    $('tposes').innerHTML=(s.poses||[]).map(p=>`<tr><td>${p.name.replace(/</g,'&lt;')}</td><td>${p.joint_deg.slice(0,6).map(x=>x.toFixed(1)).join(' / ')}</td></tr>`).join('');
+    if(s.error&&(s.state=='FAILED'||s.state=='LOST'))$('tjoints').textContent='失败：'+s.error;
+    if(s.fault&&(s.state=='ACTIVE'||s.state=='FINISHING')){$('tjoints').textContent='⚠ '+s.fault;$('tjoints').style.color='var(--bad)'}else $('tjoints').style.color='var(--muted)';
+    if(s.final&&s.state=='ENDED')$('tjoints').textContent='已结束：'+(s.final.disabled?'七轴已确认失能':'未确认失能，请检查');
+  }catch(e){}
+}
+/* ---- digital twin: side view (x-z) and top view (x-y) of the measured arm, tool trail, recorded poses, simulated replay ---- */
+const cv=$('twin'),g=cv.getContext('2d');let twinPts=null,twinTarget=null,samples=[],trail=[],poses=[],replay=null,twinOn=false,lastTeach=null;
+const VIEW=[{x:0,y:0,w:480,h:540,a:1,b:2,min:[-.1,-.05],max:[.5,.55],title:'侧视（Y–Z）'},{x:480,y:0,w:480,h:540,a:0,b:1,min:[-.35,-.1],max:[.35,.5],title:'俯视（X–Y）'}];
+function px(v,p){const sx=(v.w-30)/(v.max[0]-v.min[0]),sy=(v.h-70)/(v.max[1]-v.min[1]),k=Math.min(sx,sy);
+  return [v.x+15+(p[v.a]-v.min[0])*k,v.y+v.h-30-(p[v.b]-v.min[1])*k]}
+function drawTwin(){
+  g.fillStyle='#0b0f14';g.fillRect(0,0,960,540);
+  for(const v of VIEW){g.strokeStyle='#202a36';g.lineWidth=1;g.strokeRect(v.x+8,v.y+8,v.w-16,v.h-16);g.fillStyle='#6f7f90';g.font='20px sans-serif';g.fillText(v.title,v.x+20,v.y+34);
+    const o=px(v,[0,0,0]);g.fillStyle='#4aa3ff';g.beginPath();g.arc(o[0],o[1],7,0,7);g.fill();
+    if(trail.length>1){g.strokeStyle='#f5b84a';g.lineWidth=3;g.beginPath();trail.forEach((p,i)=>{const q=px(v,p);i?g.lineTo(q[0],q[1]):g.moveTo(q[0],q[1])});g.stroke()}
+    for(const p of poses){const q=px(v,p.tool);g.fillStyle='#3ecf8e';g.beginPath();g.arc(q[0],q[1],8,0,7);g.fill();g.fillStyle='#bff0d8';g.font='18px sans-serif';g.fillText(p.name,q[0]+11,q[1]-9)}
+    const pts=twinPts;if(pts){g.strokeStyle='#e8edf3';g.lineWidth=9;g.lineCap='round';g.lineJoin='round';g.beginPath();pts.forEach((p,i)=>{const q=px(v,p);i?g.lineTo(q[0],q[1]):g.moveTo(q[0],q[1])});g.stroke();
+      g.fillStyle='#4aa3ff';pts.forEach(p=>{const q=px(v,p);g.beginPath();g.arc(q[0],q[1],5,0,7);g.fill()});const t=px(v,pts[pts.length-1]);g.fillStyle='#ff6b6b';g.beginPath();g.arc(t[0],t[1],9,0,7);g.fill()}}
+  g.fillStyle=replay?'#f5b84a':'#8a98a8';g.font='22px sans-serif';g.fillText(replay?'仿真回放：'+replay.name+'（机械臂不动）':'数字孪生 · 实测关节角驱动（10 Hz）',20,528)}
+function setTwin(on){if(on!==twinOn){twinOn=on;cv.style.display=on?'block':'none';$('head').style.visibility=on?'hidden':'visible';$('wrist').style.visibility=on?'hidden':'visible';
+  $('headtag').textContent=on?'数字孪生 · URDF 正运动学':'头部 RGB-D · YOLO 本地检测'}}
+$('treplay').onclick=async()=>{if(replay||!lastTeach||!lastTeach.trajectories.length)return;
+  const r=await (await fetch('/api/teach/replay?i='+(lastTeach.trajectories.length-1))).json();replay={name:r.name,t:r.t,points:r.points};const t0=performance.now();
+  const step=()=>{if(!replay)return;const e=(performance.now()-t0)/1000;let i=replay.t.findIndex(x=>x>e);if(i<0){twinPts=replay.points[replay.points.length-1];replay=null;drawTwin();return}
+    twinPts=replay.points[Math.max(0,i-1)];drawTwin();requestAnimationFrame(step)};step()};
+async function twinPoll(){
+  try{const s=await (await fetch('/api/teach/state')).json();lastTeach=s;poses=s.poses||[];
+    const show=s.state=='ACTIVE'||s.state=='FINISHING';setTwin(show||!!replay);   /* the camera view comes back when zero gravity ends; the twin shows again for a replay */
+    if(s.twin&&!replay){twinTarget=s.twin.points;if(!twinPts)twinPts=twinTarget.map(p=>p.slice());
+      const e=s.live.elapsed_s;if(!samples.length||samples[samples.length-1].e!==e){samples.push({e:e,at:performance.now(),pts:twinTarget});if(samples.length>2)samples.shift()}
+      const t=twinTarget[twinTarget.length-1];const l=trail[trail.length-1];if(!l||Math.hypot(t[0]-l[0],t[1]-l[1],t[2]-l[2])>.002){trail.push(t);if(trail.length>400)trail.shift()}}
+    if(s.state=='STARTING'){trail=[];samples=[]}
+    $('treplay').disabled=!(s.state=='ENDED'&&(s.trajectories||[]).length)||!!replay;
+  }catch(e){}
+}
+/* the board reports at 10 Hz and the page asks every 100 ms; the drawing runs at the screen rate and eases toward the latest sample */
+function animate(){
+  if(twinOn&&!replay&&twinTarget){
+    /* The board reports every 100 ms and the path to the screen adds about the same again, so a plain redraw always shows the arm ~0.15 s late.
+       Show where the arm should be now: the last sample plus its measured velocity (from the two latest board samples) times the age of the
+       sample plus the pipeline delay, limited to 0.25 s, then a light smoothing. */
+    let goal=twinTarget;
+    if(samples.length==2&&samples[1].e>samples[0].e){
+      const a=samples[0],b=samples[1],dt=b.e-a.e,age=Math.min(.25,(performance.now()-b.at)/1000+.09);
+      if(dt>0&&dt<.5)goal=b.pts.map((p,i)=>p.map((v,k)=>v+(v-a.pts[i][k])/dt*age))}
+    if(!twinPts)twinPts=goal.map(p=>p.slice());else twinPts=twinPts.map((p,i)=>p.map((v,k)=>v+(goal[i][k]-v)*.6));
+    drawTwin()}
+  requestAnimationFrame(animate)}
+twinPoll();setInterval(twinPoll,50);animate();
+setInterval(tpoll,700);tpoll();
+$('supported').onchange=()=>{$('confirm').disabled=!$('supported').checked};
+$('confirm').onclick=async()=>{const r=await (await fetch('/api/confirm_supported',{method:'POST',body:JSON.stringify({confirmation:'已承托，可以失能'})})).json();if(!r.ok)alert(r.error);$('supported').checked=false;$('confirm').disabled=true};
+</script>
+</body>
+</html>

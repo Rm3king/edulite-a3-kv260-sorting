@@ -1,0 +1,570 @@
+{
+ "runs": 50,
+ "heartbeat_max_gap_ms": {
+  "stop_and_look": {
+   "n": 34,
+   "p50": 29.008190031163394,
+   "p95": 52.93360899668187,
+   "p99": 70.85403898963705,
+   "max": 70.85403898963705
+  },
+  "continuous": {
+   "n": 16,
+   "p50": 46.26153298886493,
+   "p95": 737.1413119835779,
+   "p99": 737.1413119835779,
+   "max": 737.1413119835779
+  },
+  "continuous_isolated": {
+   "n": 9,
+   "p50": 44.46694394573569,
+   "p95": 51.7346280394122,
+   "p99": 51.7346280394122,
+   "max": 51.7346280394122
+  }
+ },
+ "continuous_alignment_seconds": {
+  "screw_m12": {
+   "attempts": 12,
+   "converged": 12,
+   "converged_seconds": {
+    "n": 12,
+    "p50": 1.0645493869669735,
+    "p95": 2.816029535024427,
+    "p99": 2.816029535024427,
+    "max": 2.816029535024427
+   }
+  },
+  "nut_m12": {
+   "attempts": 11,
+   "converged": 10,
+   "converged_seconds": {
+    "n": 10,
+    "p50": 2.4300982150016353,
+    "p95": 5.48905391903827,
+    "p99": 5.48905391903827,
+    "max": 5.48905391903827
+   }
+  },
+  "screw_m6": {
+   "attempts": 5,
+   "converged": 1,
+   "converged_seconds": {
+    "n": 1,
+    "p50": 2.142203264986165,
+    "p95": 2.142203264986165,
+    "p99": 2.142203264986165,
+    "max": 2.142203264986165
+   }
+  },
+  "nut_m6": {
+   "attempts": 4,
+   "converged": 4,
+   "converged_seconds": {
+    "n": 4,
+    "p50": 1.6115454679820687,
+    "p95": 2.0294720280217007,
+    "p99": 2.0294720280217007,
+    "max": 2.0294720280217007
+   }
+  }
+ },
+ "frame_age_ms": {
+  "n": 407,
+  "p50": 123.4,
+  "p95": 206.1,
+  "p99": 246.3,
+  "max": 313.2
+ },
+ "loop_cycle_ms": {
+  "n": 522,
+  "p50": 120.0,
+  "p95": 269.7,
+  "p99": 342.2,
+  "max": 487.3
+ },
+ "stop_and_look_rounds": {
+  "n": 36,
+  "p50": 2,
+  "p95": 3,
+  "p99": 3,
+  "max": 3
+ },
+ "rows": [
+  {
+   "run": "20261029_161456",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 29.23,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_161714",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 33.84,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_161938",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 25.51,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_162126",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 30.23,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_162340",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 29.2,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_163029",
+   "mode": "stop_and_look",
+   "status": "TASK_FAILED_RETURNED_SUPPORTED",
+   "heartbeat_max_gap_ms": 39.29,
+   "parts": [
+    "TASK_FAILED_RETURNED_SUPPORTED"
+   ]
+  },
+  {
+   "run": "20261029_164044",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 28.12,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_164328",
+   "mode": "stop_and_look",
+   "status": "TASK_FAILED_RETURNED_SUPPORTED",
+   "heartbeat_max_gap_ms": 37.22,
+   "parts": [
+    "TASK_FAILED_RETURNED_SUPPORTED"
+   ]
+  },
+  {
+   "run": "20261029_164711",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 24.62,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_165046",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 35.17,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_165325",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 26.78,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_165702",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 21.02,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_170017",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 33.66,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_170229",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 33.26,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_171240",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 26.76,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_171623",
+   "mode": "stop_and_look",
+   "status": "TASK_FAILED_RETURNED_SUPPORTED",
+   "heartbeat_max_gap_ms": 52.93,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "TASK_FAILED_RETURNED_SUPPORTED"
+   ]
+  },
+  {
+   "run": "20261029_172042",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 23.22,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_180228",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 25.78,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_180613",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 26.98,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_181117",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 28.29,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_182138",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 28.7,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_182343",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 26.26,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_183018",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 29.55,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_184155",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 32.27,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_192956",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 29.01,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_193419",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 32.3,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_193630",
+   "mode": "stop_and_look",
+   "status": "FAILED",
+   "heartbeat_max_gap_ms": 2.22,
+   "parts": []
+  },
+  {
+   "run": "20261029_193708",
+   "mode": "stop_and_look",
+   "status": "RECOVERY_FAILED_RETAINING_CONTROL",
+   "heartbeat_max_gap_ms": 32.72,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261029_201430",
+   "mode": "stop_and_look",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 23.43,
+   "parts": [
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261029_201646",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 26.92,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_013255",
+   "mode": "stop_and_look",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 30.41,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_120801",
+   "mode": "stop_and_look",
+   "status": "RECOVERY_FAILED_RETAINING_CONTROL",
+   "heartbeat_max_gap_ms": 14.04,
+   "parts": []
+  },
+  {
+   "run": "20261030_121206",
+   "mode": "stop_and_look",
+   "status": "RECOVERY_FAILED_RETAINING_CONTROL",
+   "heartbeat_max_gap_ms": 12.02,
+   "parts": []
+  },
+  {
+   "run": "20261030_122301",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 61.41,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_123931",
+   "mode": "stop_and_look",
+   "status": "RECOVERY_FAILED_RETAINING_CONTROL",
+   "heartbeat_max_gap_ms": 70.85,
+   "parts": []
+  },
+  {
+   "run": "20261030_124628",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 44.07,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_130544",
+   "mode": "continuous",
+   "status": "RETURN_CONTINUOUS_TIMEOUT",
+   "heartbeat_max_gap_ms": 45.46,
+   "parts": [
+    "RETURN_CONTINUOUS_TIMEOUT"
+   ]
+  },
+  {
+   "run": "20261030_130915",
+   "mode": "continuous",
+   "status": "RECOVERY_FAILED_RETAINING_CONTROL",
+   "heartbeat_max_gap_ms": 48.4,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_144122",
+   "mode": "continuous",
+   "status": "RETURN_VISION_LOST",
+   "heartbeat_max_gap_ms": 47.74,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_LOST"
+   ]
+  },
+  {
+   "run": "20261030_144730",
+   "mode": "continuous",
+   "status": "RETURN_VISION_LOST",
+   "heartbeat_max_gap_ms": 46.26,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_LOST"
+   ]
+  },
+  {
+   "run": "20261030_163823",
+   "mode": "continuous",
+   "status": "RECOVERY_FAILED_RETAINING_CONTROL",
+   "heartbeat_max_gap_ms": 737.14,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_164940",
+   "mode": "continuous",
+   "status": "RETURN_CONTINUOUS_TIMEOUT",
+   "heartbeat_max_gap_ms": 47.06,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_CONTINUOUS_TIMEOUT"
+   ]
+  },
+  {
+   "run": "20261030_205336",
+   "mode": "continuous",
+   "status": "RETURN_CONTINUOUS_TIMEOUT",
+   "heartbeat_max_gap_ms": 47.67,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_CONTINUOUS_TIMEOUT"
+   ]
+  },
+  {
+   "run": "20261030_211337",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 43.88,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_213358",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 44.06,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_214227",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 43.98,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261030_220402",
+   "mode": "continuous",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 44.47,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261030_221647",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 45.19,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  },
+  {
+   "run": "20261031_165058",
+   "mode": "continuous",
+   "status": "RETURN_VISION_REJECTED",
+   "heartbeat_max_gap_ms": 44.22,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "RETURN_VISION_REJECTED"
+   ]
+  },
+  {
+   "run": "20261031_165318",
+   "mode": "continuous",
+   "status": "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+   "heartbeat_max_gap_ms": 51.73,
+   "parts": [
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES",
+    "COMPLETED_ONLINE_GRASP_MOTION_VERIFY_IMAGES"
+   ]
+  }
+ ]
+}

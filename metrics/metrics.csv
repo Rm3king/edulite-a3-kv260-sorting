@@ -1,0 +1,47 @@
+指标名称,类别,数值,单位,测量条件,测试次数/时长,证据文件
+开发记录中的放置确认比例,核心,79.8,%,83/104 件经头部相机逐槽核对确认；2026-10-28 至 2026-11-01 数量统计完整的任务记录,58 条记录 / 104 件,metrics/logs/task_trials.csv
+视觉到修正指令延迟 P50（板端连续对准）,核心,123.0,ms,起点=腕部相机帧到达板端时间戳，终点=PL 修正目标寄存器写入；板上计时，同一单调时钟，无需跨机同步；含 PL 掩码+定位+积分,407 帧，连续对准试验,metrics/logs/board_run_stats.json
+视觉到修正指令延迟 P95,核心,206.0,ms,同上,407 帧,metrics/logs/board_run_stats.json
+视觉到修正指令延迟 P99,核心,246.0,ms,同上,407 帧,metrics/logs/board_run_stats.json
+视觉到修正指令延迟 最大值,核心,313.0,ms,同上,407 帧,metrics/logs/board_run_stats.json
+物理响应滞后（修正指令到图像中位移）,核心,70,ms,腕部图像中零件位移与 PL 已施加修正量的最小二乘拟合；11 帧；用于连续对准的延迟补偿参数,11 帧（一次大螺丝连续对准）,metrics/logs/board_run_stats.json
+头部检测 mAP@0.5:0.95（分割掩码）,核心,0.729,,YOLO11n-seg 四类，FP32，输入 1280 px；验证集（与训练同分布）；掩码 mAP50=0.976，框 mAP50-95=0.852,验证集,data/model/val_metrics.json
+头部检测单样本总延迟 P50（GPU）,核心,45.4,ms,batch=1，1920×1080 输入，ROCm PyTorch FP32，Radeon 890M，含预处理 8.7、推理 29.8、后处理（含全分辨率掩码）4.6 ms,100 次,metrics/logs/detector_latency_gpu.json
+头部检测单样本总延迟 P95（GPU）,核心,49.1,ms,同上,100 次,metrics/logs/detector_latency_gpu.json
+头部检测单样本总延迟 P50（NPU）,核心,72.1,ms,batch=1，同输入，Quark A8W8，VitisAI EP，含预处理 16.9、推理 51.9、后处理 2.5 ms,100 次,metrics/logs/detector_latency_npu.json
+头部检测单样本总延迟 P95（NPU）,核心,109.4,ms,同上,100 次,metrics/logs/detector_latency_npu.json
+VLM 同载下检测延迟 P50/P95（GPU）,核心,42→133 / 67→306,ms,Qwen2.5-VL-3B（bf16，GPU）连续生成结果复核时，GPU 检测的完整单帧延迟（空闲→同载）,60 次/档,metrics/logs/npu_contention_gpu_vlm.json
+VLM 同载下检测延迟 P50/P95（NPU）,核心,102→107 / 120→141,ms,同上，NPU 检测（空闲→同载）,60 次/档,metrics/logs/npu_contention_npu_vlm.json
+NPU 与 GPU 抓取目标一致性,核心,270/274 个三维目标匹配，可抓判定 270/270 一致,个,同一帧、同一深度、同一 locate_parts；基准=生产 GPU 预测；基座坐标偏差 P50 0.33 / P95 1.1 / 最大 2.71 mm,80 帧，6 个会话,metrics/logs/npu_acceptance_acceptance.json
+PL 图像掩码核延迟 P50,核心（FPGA 量化贡献）,7.82,ms,KV260，PL 100 MHz，256 KB 灰度帧→掩码，含全部 DMA 与缓存维护；对照 ARM A53 单核 C -O3 14.43 ms（1.85×）,300 帧,metrics/logs/board_bench_20261028.json
+PL 图像掩码核每帧 CPU 耗时,核心（FPGA 量化贡献）,0.68 vs 14.45,ms/帧,睡眠轮询 0.5 ms；每帧 CPU 时间降低 95%（单核占用 9% vs 100%）,300 帧,metrics/logs/board_bench_20261028.json
+PL 跟踪看门狗检测延迟 P50,核心（FPGA 量化贡献）,300.8,ms,内部回环，持续 57 mrad 滞后，阈值 40.3 mrad，保持 300 ms；PL 逐帧判定七轴；对照 ARM 0.15 s 采样判据 P50 408.1 ms,20 次,metrics/logs/tracking_latency_loopback_20261028.json
+控制服务暂停时最长命令请求间隔（PL / ARM）,核心（FPGA 量化贡献）,5.014 / 21.435,ms,同一参考轨迹、同一限幅与增益，共享 PL CAN；Python 服务人为暂停 20 ms 的 ABBA 对照（PL 调度不受 Linux 服务暂停影响）,4 轮 ABBA,metrics/evidence/control_convergence_report.md
+抓取目标暂存的 MMIO 写入次数降低,核心（FPGA 量化贡献）,87.59,%,pick 轨迹：325948 → 40443 次（ARM 逐拍写 vs PL 段提交）,3 类轨迹 ABBA,metrics/evidence/control_convergence_report.md
+AI PC↔KV260 ICMP RTT P50 / P95 / P99 / 最大,核心（通信）,0.169 / 0.218 / 0.25 / 0.257,ms,专用 1 GbE 直连，192.168.26.1↔192.168.26.2，间隔 0.2 s,200 包,metrics/logs/comm_bench.json
+AI PC↔KV260 丢包率,核心（通信）,0.0,%,同上,200 包,metrics/logs/comm_bench.json
+作业包通道有效吞吐（AI PC→板 / 板→AI PC）,核心（通信）,28.2 / 32.3,MB/s,经 SSH 通道（作业包实际使用的路径），48 MB 随机数据,各 1 次,metrics/logs/comm_bench.json
+作业下发命令往返（SSH，含握手）P50 / P95,核心（通信）,508 / 563,ms,作业包发布/启动命令的应用层往返；连续对准环不经过该通道,40 次,metrics/logs/comm_bench.json
+控制心跳最大间隔 P50 / P95 / 最大（视觉进程隔离后，连续对准）,场景-实时控制,44.5 / 51.7 / 51.7,ms,KV260 owner 对 PL 的心跳写间隔，每次运行取最大；PL 租约 100 ms，5 ms 设定周期由 PL 求值,9 次运行,metrics/logs/board_run_stats.json
+控制心跳最大间隔 P50 / P95 / 最大（停顿对准）,场景-实时控制,29.0 / 52.9 / 70.9,ms,同上,34 次运行,metrics/logs/board_run_stats.json
+PL 修正通道仿真逐拍检查,场景-实时控制,179 拍全部满足限幅与步长；完整回归 16/16 通过,,xsim；每关节偏移限幅 ≤0.25 rad，步长 ≤0.003 rad/5 ms，租约 ≤0.5 s，越限故障码 6,16 个测试平台,metrics/logs/rtl_regression_validation.json
+FPGA 资源占用（完整设计）,场景-FPGA 资源,LUT 72038（61.51%）/ FF 70273（30.00%）/ BRAM 7.5（5.21%）/ DSP 415（33.25%）,,Vivado 2025.2，xck26-sfvc784-2LV-c，实现后,1 次构建,build/report/impl_utilization.rpt
+时序收敛,场景-FPGA 资源,WNS +0.150 ns / TNS 0.000 / WHS +0.011 ns / 端点 216852，失败端点 0,ns,单时钟 clk_pl_0，100 MHz,1 次构建,build/report/impl_timing.rpt
+连续对准用时（大螺丝）P50 / P95,场景-视觉与传感,1.06 / 2.82,s,悬停到收敛，板端闭环；12/12 次收敛；停顿对准基线 悬停到下降 P50 6.67 / P95 10.36 s（35 个零件）,12 次,metrics/logs/board_run_stats.json
+连续对准用时（大螺母）P50 / P95,场景-视觉与传感,2.43 / 5.49,s,同上；10/11 次收敛,11 次,metrics/logs/board_run_stats.json
+连续对准用时（小螺母）P50 / P95,场景-视觉与传感,1.61 / 2.03,s,同上；4/4 次收敛,4 次,metrics/logs/board_run_stats.json
+停顿对准轮数（小螺丝）P50,场景-视觉与传感,2,轮,每轮=三帧取图→AI PC 定位→板端校验,36 个零件,metrics/logs/board_run_stats.json
+AI PC SoC 功率：空闲 / GPU 检测循环 / NPU 检测循环,场景-功耗与能效,23.0 / 55.6 / 54.3,W,amdgpu hwmon power1_average（PPT，SoC 封装功率，10 Hz 采样）；检测循环=500 帧完整检测（预处理+推理+后处理），不含模型加载；千问服务驻留,空闲 30 s；检测各 500 帧,metrics/logs/power_aipc_idle.json
+头部检测每帧能耗（GPU / NPU）,场景-功耗与能效,2.53 / 5.34,J/帧,同上；GPU 22.0 帧/秒，NPU 10.2 帧/秒；SoC 总功率相当，NPU 单帧更慢，故单帧能耗更高；NPU 的价值在与 VLM 同载时延迟稳定（见上）,各 500 帧,metrics/logs/power_aipc_npu_detect.json
+KV260 板级功率：空闲 / 单核 ARM 掩码满载,场景-功耗与能效,3.34 / 3.68,W,板载 INA260（ina260_u14）power1_input，20 Hz；满载=A53 单核 C -O3 连续计算掩码 69.2 帧/秒（每帧 53.2 mJ）；不含机械臂、相机与 AI PC,各 20 s,metrics/logs/power_board_idle.json
+机械臂整机用电,场景-功耗与能效,【待补充指标】,W,需实验室外置功率计,,
+Skill 干净环境部署成功率与耗时,场景-Skill 复用,【待补充指标】,%,,,
+关节跟踪误差 RMSE / 峰值（J2，一次完整四件运行）,场景-实时控制,3.4 / 25.3,mrad,指令位置 loc_ref 对实测反馈位置，owner 守护采样 848 点，运行 132 s；误差超过 10 mrad 的采样占 1.2%；跟踪保护限 40 mrad 且持续 300 ms 才判定，本次运行无跟踪故障；位置跟踪误差不代表末端平稳，抖动另行评估,848 点,metrics/logs/run_waveforms.json
+关节跟踪误差 RMSE / 峰值（J3，同一次运行）,场景-实时控制,5.3 / 44.5,mrad,同上；848 点，误差超过 10 mrad 的采样占 4.8%,848 点,metrics/logs/run_waveforms.json
+电机反馈帧间隔 P50 / P95 / P99 / 最大（七电机最差值，PL 流运行段）,场景-实时控制,5.0 / 5.047 / 5.9 / 6.3,ms,每帧由 PL 1 µs 计数器打接收时间戳（pl_rx_us）；名义 5 ms；运行段 131 s；间隔超过 2 倍中位数的次数 0；使能与失能瞬间的间隔不计入运行段,每电机 ≥26270 帧,metrics/logs/run_waveforms.json
+CAN 位宽与总线占用（逻辑分析仪实测）,核心（通信）,1.0 µs（1.000 Mbps）/ 占用 26.8%,,Kingst LA2016，50 MHz，CAN-H 阈值 2.8 V；稳态流段帧率 3247 帧/秒；位宽取同极性边沿间隔中位数,250087 帧,metrics/logs/bus_timing.json
+5 ms 周期线上起点间隔 P50 / P95 / P99 / 最大,核心（FPGA 量化贡献）,4.9998 / 5.001 / 5.654 / 6.022,ms,逻辑分析仪实测帧起点（20 ns 分辨率），轴 1 指令帧；PL 轨迹流稳态段 77 s，三件运行（大螺丝、大螺母、小螺丝）,15364 个周期,metrics/logs/bus_timing.json
+5 ms 周期间隔偏差 P50 / P95 / P99 / P99.9 / 最大,核心（FPGA 量化贡献）,0.4 / 67.0 / 870.0 / 1000.0 / 1029.0,µs,同上；偏差=|间隔−5 ms|；周期锚定在绝对栅格上，晚点的周期之后下一周期回到栅格，不累积；晚点超过 250 µs 的 548 个周期都与一次位置读取事务同时出现（其余周期 849/14556），超过 1 ms 的 16 个,15364 个周期,metrics/evidence/figures/fig_wire_period.png
+PL 发送计时监视器（CAN 核请求处）周期统计,场景-实时控制,21250 个命令，偏差 P50 ≤5 µs / P95 ≤250 µs，间隔 >1.5 周期 17 次,,PL 内部 1 µs 计数器，七轴同一周期；偏差为直方图桶上界；监视器累计整次运行，17 次长间隔与逻辑分析仪在流启动前看到的 17 个 50 Hz 保持帧间隔数量一致,21250 个命令,metrics/logs/tx_timing_run.json
+逻辑分析仪游标实测：相邻两个周期 0x1200FD01 起点间隔,证据,4.99974,ms,KingstVIS 时间游标 A1=74.51711374 s，A2=74.52211348 s；通道 1（CAN-H），50 MHz；整段采集概览图含 0–150 s 全部时段,1 对相邻周期,metrics/evidence/screenshots/la_marker_5ms.png
+延迟/抖动波形（逻辑分析仪实测帧时序图）,证据,已提供,,一个周期内七个指令帧、电机反馈与位置读取的线上时序；周期偏差直方图,,metrics/evidence/figures/fig_wire_tick.png

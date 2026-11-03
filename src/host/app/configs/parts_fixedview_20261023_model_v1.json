@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "stage": "OFFLINE_EVALUATED_LIVE_ACCEPTANCE_PENDING",
+  "checkpoint": "aipc_app/reports/yolo_fixedview_20261023_001/train/weights/best.pt",
+  "checkpoint_sha256": "a98af389986e141eb570f61c8baa19e0751205f4cc15666f182771efbffda224",
+  "confidence_threshold": 0.25,
+  "same_class_mask_iou_threshold": 0.5,
+  "imgsz": 640,
+  "nms_iou": 0.7,
+  "training_report": "/opt/edulite/host/reports/yolo_fixedview_20261023_001/report.json",
+  "scope": "Fixed viewpoint, separated single layer parts. 5 test images are a small check only. No physical grasp or absolute XYZ acceptance."
+}

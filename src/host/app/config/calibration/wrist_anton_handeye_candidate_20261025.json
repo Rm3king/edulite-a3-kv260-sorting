@@ -1,0 +1,381 @@
+{
+  "schema": "workcell.eye_in_hand.candidate.v1",
+  "T_end_camera": [
+    [
+      -0.9940584238990743,
+      0.08648137774424382,
+      -0.06609705877530135,
+      0.011758661064286068
+    ],
+    [
+      0.10605638505270648,
+      0.9061815643366432,
+      -0.4093739313218983,
+      0.04861479825985628
+    ],
+    [
+      0.024492714525758436,
+      -0.4139516200715389,
+      -0.9099693199088131,
+      -0.05108406751471291
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "T_base_board": [
+    [
+      -0.9983571835785476,
+      0.04063049679559266,
+      -0.040399216913885753,
+      -0.07219407535772394
+    ],
+    [
+      0.03705059758115337,
+      0.9956297365184834,
+      0.08572444796565776,
+      0.2604340085472274
+    ],
+    [
+      0.043705688599897825,
+      0.08408680330634948,
+      -0.9954994838239388,
+      -0.036811832046139546
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "fit": {
+    "views": [
+      {
+        "name": "pose_00",
+        "board_center_error_mm": 0.5457494029772593,
+        "rotation_error_deg": 0.28989301684801017
+      },
+      {
+        "name": "pose_01",
+        "board_center_error_mm": 5.644084109045207,
+        "rotation_error_deg": 1.3364148710867296
+      },
+      {
+        "name": "pose_02",
+        "board_center_error_mm": 5.021341676305235,
+        "rotation_error_deg": 1.064375449197399
+      },
+      {
+        "name": "pose_03",
+        "board_center_error_mm": 6.854336012410748,
+        "rotation_error_deg": 1.3794179694663722
+      },
+      {
+        "name": "pose_04",
+        "board_center_error_mm": 3.9594484991296723,
+        "rotation_error_deg": 0.7637464825509317
+      },
+      {
+        "name": "pose_05",
+        "board_center_error_mm": 2.132419150738215,
+        "rotation_error_deg": 0.560875052250046
+      },
+      {
+        "name": "pose_06",
+        "board_center_error_mm": 0.9680798535628703,
+        "rotation_error_deg": 0.46579972853533075
+      },
+      {
+        "name": "pose_07",
+        "board_center_error_mm": 2.7841960506227084,
+        "rotation_error_deg": 0.23361597879642435
+      },
+      {
+        "name": "pose_08",
+        "board_center_error_mm": 6.187023802123738,
+        "rotation_error_deg": 1.278996185802648
+      },
+      {
+        "name": "pose_09",
+        "board_center_error_mm": 6.394372534152842,
+        "rotation_error_deg": 1.40478999116544
+      },
+      {
+        "name": "pose_10",
+        "board_center_error_mm": 1.1960815953211275,
+        "rotation_error_deg": 0.2782887925560167
+      },
+      {
+        "name": "pose_11",
+        "board_center_error_mm": 2.1097203333839434,
+        "rotation_error_deg": 0.43871077699301547
+      }
+    ],
+    "position_rmse_mm": 4.26528122408382,
+    "position_max_mm": 6.854336012410748,
+    "rotation_max_deg": 1.40478999116544
+  },
+  "holdout": {
+    "views": [
+      {
+        "name": "pose_12",
+        "board_center_error_mm": 6.100697273001525,
+        "rotation_error_deg": 1.3926872077776677
+      },
+      {
+        "name": "pose_13",
+        "board_center_error_mm": 6.767642744552091,
+        "rotation_error_deg": 1.675497437892599
+      },
+      {
+        "name": "pose_14",
+        "board_center_error_mm": 4.839441367571744,
+        "rotation_error_deg": 1.0073625217786646
+      },
+      {
+        "name": "pose_15",
+        "board_center_error_mm": 2.0829467809174402,
+        "rotation_error_deg": 0.4347390936918147
+      },
+      {
+        "name": "pose_16",
+        "board_center_error_mm": 3.3231934551606863,
+        "rotation_error_deg": 0.4590905786899425
+      }
+    ],
+    "position_rmse_mm": 4.93603019272408,
+    "position_max_mm": 6.767642744552091,
+    "rotation_max_deg": 1.675497437892599
+  },
+  "fit_views": 12,
+  "holdout_views": 5,
+  "rotation_excitation_singular_values": [
+    2.0418890011123603,
+    1.9598710455754165,
+    1.8951051776692764
+  ],
+  "scope": "Fixed-board pose consistency, not independently measured physical TCP or grasp accuracy",
+  "verified": false,
+  "grasp_correction_verified": false,
+  "robot_execution_authorized": false,
+  "pose_consistency_validated": false,
+  "acceptance_policy": {
+    "fit_views_planned": 12,
+    "holdout_views_planned": 5,
+    "min_fit_views": 6,
+    "min_holdout_views": 3,
+    "image_rms_max_px": 0.5,
+    "image_p95_max_px": 1.0,
+    "burst_deviation_max_px": 1.0,
+    "heldout_board_center_rmse_max_mm": 3.0,
+    "heldout_board_center_error_max_mm": 5.0,
+    "heldout_rotation_error_max_deg": 2.0,
+    "scope": "Fixed-board pose consistency only; not independent metric/TCP/grasp acceptance",
+    "frozen_before_new_capture_analysis": true
+  },
+  "intrinsics_sha256": "4a4cf7e5cef5d97c3107146f9d1c67e2f0ddf13c3e6433029705a74126d06cbf",
+  "image_observations_sha256": "738915877753a25aa58769e96e1b2a4a92a373651f9888f3238a88f40fb46062",
+  "profile_sha256": "62d061b7f30a5ac247377dc6ebee8388765a0c2ce86f61e0a7df4c5eaeb65848",
+  "model_id": "cb2af9a94216c9522ca215a9d9c593b7928f8f28695d9dc4654f345946428e8a",
+  "robot_deployed": false,
+  "camera_mount": "Fixed gripper body; unchanged focus",
+  "T_end_camera_definition": "OpenCV optical frame to URDF arm-end frame, metres",
+  "evidence": "aipc_app/reports/wrist_handeye_centered_retry_20261025",
+  "calibration_id": "wrist_anton_handeye_candidate_20261025",
+  "camera_serial": "20261016107",
+  "deployment_status": "CANDIDATE_ONLY_FAILED_POSE_CONSISTENCY_LIMITS",
+  "sources": [
+    {
+      "name": "pose_00",
+      "split": "fit",
+      "images": [
+        "0cc3bc90cc879914de61a35e103fab94bd5e52c5d5caaa9452380d3d1c29661f",
+        "613abc8c83d2e9a8c731711f48ecb9540fbf5b26437d5932edb9239b4bcd8f19",
+        "b36176600a48923d4608dbfe3b8f0cf988a0b04cf6209f759a019c3637485635"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.055069450289011
+    },
+    {
+      "name": "pose_01",
+      "split": "fit",
+      "images": [
+        "22e27b60fbcaeacaec8cf4391bda2d475cbe4a3b07b3bfe1cc77584e46116a2f",
+        "a71d49a479ab81c713b7592dba633454f520bcd7de6b8b5c301c89433785302c",
+        "5b5dad160faf58c4f01bb49d268382622d1f2db971950b38830d1cd62da4b73f"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.1380598098039627
+    },
+    {
+      "name": "pose_02",
+      "split": "fit",
+      "images": [
+        "2c0118b6b1dc2d0716890a202eecd8ebd5f5f145ed63d6f69566d9a80dafe786",
+        "ac441aa4e1e25e70420497d238cf0194ca761f6795596d98c4ce8df8d781e87a",
+        "2ada4916ef9da506f565d97e7285d4496c1831ca608fd7994eafba40169bbd22"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.0522034578025341
+    },
+    {
+      "name": "pose_03",
+      "split": "fit",
+      "images": [
+        "74f610749af85a2953d0d847e148504f0110aabaeeb171590a620b18c68355b2",
+        "0b1b81874636f24631cfe3dd6abbb7c120195dd6496caed190b55399d069ed3c",
+        "a805e834d7a61c4634f78e8ff51d3cdf168d069e1806824f53e7c63e8f264759"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.052084386348724365
+    },
+    {
+      "name": "pose_04",
+      "split": "fit",
+      "images": [
+        "5cdb9f53e59b42b3789ffcf81cc2f56b7d50fa2f0e762e8fe686bfca058e882f",
+        "e61c1e989d3d880a2fc7481b65be938a732c0c31462aa1f386c1642011b0b1d4",
+        "57780b15ba3bee444bed8a6d5cdf05b1c8ccdf62e848266c37b418b80b5d654e"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.07306057214736938
+    },
+    {
+      "name": "pose_05",
+      "split": "fit",
+      "images": [
+        "206fe2bfb58ae483986a968e49839ddedd6a8c005a2b59ae699a4122b584c127",
+        "ce1f38ed2e1e34f3e51bd7e7f7bd990c7e14704c73b483cdbfdd922ddd5d5ddf",
+        "e03ab138d67473666b37666c065788c08872cfc774843a2efb14896680b9f951"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.0487891249358654
+    },
+    {
+      "name": "pose_06",
+      "split": "fit",
+      "images": [
+        "c79b600b7b13081e328af39f7216da3a1123455a75d99c78130f58c75fda3a94",
+        "b31a5c04728e2cb68d2810966709297cacca774446d5a3e9e9208c3317d4a160",
+        "da781af73d1d14fb34c5198becc0c331ed5088b556b3781baeccf70eba55e1fd"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.04727056995034218
+    },
+    {
+      "name": "pose_07",
+      "split": "fit",
+      "images": [
+        "b40bb5a1a85c9f8a46a8a9d44d23bd1501cc1b4c1ced9a69453ad7068ed3b0cd",
+        "d775baaf5422b7910f6c61313d0c32856f534d166e7cd57d3d56c80879ad739c",
+        "acf4b6aacd71aee865a94f2bf5ba72f1e105ec22907cc49885af59970cb5059a"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.049355145543813705
+    },
+    {
+      "name": "pose_08",
+      "split": "fit",
+      "images": [
+        "5d0cb1f70a550b650e6d7150544fef29ea98f4c9f87f43c03c400e164198bb51",
+        "f3ecae5516982ce944c41ff31715f7c7afdb7c2265fc1a544b18fa5a18645fa0",
+        "f0ba2b6e1343abd5b90276e3a7b0634c42c8b2f4701f5fb1f324e5c807de3b6a"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.057409558445215225
+    },
+    {
+      "name": "pose_09",
+      "split": "fit",
+      "images": [
+        "0abe6fa6ef39b106d663ae6c5ff1b824755f7ed30c2e025b3d83f36864a5d5d7",
+        "4a97e51a5b76d41002815723fd3be80485c273dd41ce9ac42f7ffdc745f5d3e4",
+        "920390c97072b5234f28064c901fc46b415bcca419f0fba0215f60bae5cb3840"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.07975462079048157
+    },
+    {
+      "name": "pose_10",
+      "split": "fit",
+      "images": [
+        "f9ae372fdb4bce8398cae2070898f1db912ca28d71692059aaa1672fb6e0313b",
+        "7723b8676acd20613ef73e684e21e9105ecc62a02a5df8a1b4373ba320f2188c",
+        "22b70e3c10ca8bbcde5ad1e4ff38daf84ecd9d8597e98ecdf84e72405b251721"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.06906430423259735
+    },
+    {
+      "name": "pose_11",
+      "split": "fit",
+      "images": [
+        "54212885ffaf43a8baeb9aba94dd778ebbcdaef0efb00e08c5d9681511a4462a",
+        "5b0cc1e95eec69f1658b045988f99fe052078d67ba08a42a78c2e21be05c97cc",
+        "b37653a2664c2a90983beda2ac4c7973a39ae5487b115431ebe04ea302a8218c"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.0629037469625473
+    },
+    {
+      "name": "pose_12",
+      "split": "holdout",
+      "images": [
+        "237a1534bec4479b2a606fa643f98f20c9989bc20bb20071e7e6f2dbbd1a21a6",
+        "3de31dd505be3c042238e029c9601afce32d5dd586b0dac0d721cdc302c96bae",
+        "8bffa6988ffd1cc1d05530c939b3330930896703b7f08aea9e781348a1eb94bc"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.05743781849741936
+    },
+    {
+      "name": "pose_13",
+      "split": "holdout",
+      "images": [
+        "72a95b25fb5c147a6c7926dda46723fee2f723a6185867b78b9dde52316df795",
+        "41e19559803754e570993b8498ba5dd1740e4d2da847e72b4a122a0ea34bab14",
+        "5f5ed428a70b68049e9c410683108f2f73df28992f890929a2ab929372aa8d5d"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.05507642775774002
+    },
+    {
+      "name": "pose_14",
+      "split": "holdout",
+      "images": [
+        "88da03d76dceaee99b1bc364a28bf6e2d9ab182a4cee778e1dad63b2e5b74493",
+        "5ebeaa46ae88fb29ea97286cd89f36c1442f120df86c0d6f11f99b9a371d067c",
+        "86f735a0f1c77535919b3b121f1f1e303e74c92ec4739a931f2e916195d18afd"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.0656588077545166
+    },
+    {
+      "name": "pose_15",
+      "split": "holdout",
+      "images": [
+        "3af99671b486be8abdcf49910ec1ca9d56dbe54795d8b18e5b07a7f98c5f37a2",
+        "854d880c05cd59f175a4142f908611edc31a5e313b43a1ef97a037e4cea65ee0",
+        "abe4b9a638291b5d5f41ac438e7e22db09fadbd193489897ca2643f6cfad540e"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.061877332627773285
+    },
+    {
+      "name": "pose_16",
+      "split": "holdout",
+      "images": [
+        "59b7fe3f07fbd5266b886ed30578876d9775ca7d564d9b1dea6e0e302f698d9a",
+        "0dfd44b92f773127a9d0afab70f31707ae7d754131d70375a67c3b499a881d02",
+        "b02d3b6807f7d81b4b1d9ca8d9a1d18adb2e1523c07b7a2b661a5fdcfd93b646"
+      ],
+      "selected_frame": 1,
+      "image_rms_px": 0.055891670286655426
+    }
+  ],
+  "note": "Do not activate for autonomous descent. New local correction/metric validation required; rejected reprojection refinement retained separately."
+}

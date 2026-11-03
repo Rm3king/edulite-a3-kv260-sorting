@@ -1,0 +1,29 @@
+{
+  "kp": [
+    80,
+    60,
+    60,
+    80,
+    80,
+    80
+  ],
+  "kd": [
+    4,
+    5,
+    5,
+    5,
+    4,
+    4
+  ],
+  "motor_torque_limit_nm": [
+    1.5,
+    4.5,
+    5.5,
+    2.5,
+    1,
+    1
+  ],
+  "source": "KV260 accepted 2026-10-19 tracking release; copied numeric MIT gains/caps for simulation only",
+  "source_sha256": "7bc79039ad08d3cef44616e41501b9d7a655b69f23abbe2051323e3b55fac14a",
+  "physical_identification": false
+}

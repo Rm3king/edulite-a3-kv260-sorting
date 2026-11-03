@@ -1,0 +1,16 @@
+{
+  "schema":"kv260.motion_profile.v1",
+  "scope":"ATTENDED_COMMISSIONING_CANDIDATE_NOT_DEFAULT_OR_FULL_SPEED_CERTIFICATION",
+  "motor_directions":[-1,1,-1,1,-1,1,1],
+  "motor_offsets_rad":[0,0,0,0,0,0,0],
+  "position_lower_rad":[-2.79253,0,-4.01426,-1.5708,-1.5708,-1.5708,-0.005880276206880808],
+  "position_upper_rad":[2.79253,3.66519,0,1.5708,1.5708,1.5708,1.677834153175354],
+  "velocity_rad_s":[0.35,0.18,0.18,0.35,0.35,0.35,0.15],
+  "csp_velocity_limit_rad_s":[0.5,0.3,0.3,0.5,0.5,0.5,0.25],
+  "acceleration_rad_s2":[0.8,0.5,0.5,0.8,0.8,0.8,0.5],
+  "current_caps_a":[1.5,4.5,4.5,2.5,1,1,0.5],
+  "motor_communication_timeout_ticks":6000,
+  "tick_s":0.005,
+  "maximum_segment_s":600,
+  "flash_writes":false
+}

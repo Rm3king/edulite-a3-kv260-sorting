@@ -1,0 +1,1866 @@
+{
+  "status": "NPU_VS_FLOAT_EVALUATED",
+  "float_model": "reports/npu_parts_v2_20261031/parts_v2_fp32_736x1280.onnx",
+  "quant_model": "reports/npu_parts_v2_20261031/parts_v2_a8w8_736x1280.onnx",
+  "frames": 52,
+  "providers": [
+    "VitisAIExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "npu_compile_s": 20.987677576005808,
+  "profile_node_events_by_provider": {
+    "VitisAIExecutionProvider": 12,
+    "CPUExecutionProvider": 20
+  },
+  "reference_detections": 216,
+  "matched": 209,
+  "missed": 7,
+  "extra": 5,
+  "box_center_px": {
+    "p50": 0.51,
+    "p95": 2.025999999999998,
+    "max": 6.25
+  },
+  "mask_center_px": {
+    "p50": 0.69,
+    "p95": 3.3359999999999994,
+    "max": 8.15
+  },
+  "per_class_box_center_px_max": {
+    "screw": 4.83,
+    "nut": 1.84,
+    "screw_m6": 6.25,
+    "nut_m6": 0.96
+  },
+  "latency_ms": {
+    "cpu_fp32": {
+      "p50": 103.84827099187532,
+      "p95": 135.85052425041792
+    },
+    "npu": {
+      "p50": 65.81033649854362,
+      "p95": 80.60993779363343
+    }
+  },
+  "rows": [
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_59287_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.7,
+        0.92,
+        0.49,
+        0.47
+      ],
+      "mask_center_px": [
+        0.81,
+        0.88,
+        0.69,
+        2.51
+      ],
+      "per_class": {
+        "screw": [
+          0.7
+        ],
+        "nut": [
+          0.92
+        ],
+        "screw_m6": [
+          0.47
+        ],
+        "nut_m6": [
+          0.49
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_497829_color.png",
+      "reference": 3,
+      "npu": 2,
+      "matched": 2,
+      "missed": [
+        [
+          "screw",
+          0.38
+        ]
+      ],
+      "extra": [],
+      "box_center_px": [
+        0.31,
+        0.71
+      ],
+      "mask_center_px": [
+        0.31,
+        0.28
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [
+          0.31
+        ],
+        "screw_m6": [],
+        "nut_m6": [
+          0.71
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_56447_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.42,
+        0.64,
+        0.24,
+        0.24
+      ],
+      "mask_center_px": [
+        0.61,
+        0.61,
+        0.75,
+        0.0
+      ],
+      "per_class": {
+        "screw": [
+          0.42
+        ],
+        "nut": [
+          0.64
+        ],
+        "screw_m6": [
+          0.24
+        ],
+        "nut_m6": [
+          0.24
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_14851_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.0,
+        0.73,
+        0.44,
+        0.97
+      ],
+      "mask_center_px": [
+        0.51,
+        0.31,
+        0.49,
+        2.57
+      ],
+      "per_class": {
+        "screw": [
+          1.0
+        ],
+        "nut": [
+          0.73
+        ],
+        "screw_m6": [
+          0.97
+        ],
+        "nut_m6": [
+          0.44
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_606_color.png",
+      "reference": 3,
+      "npu": 4,
+      "matched": 3,
+      "missed": [],
+      "extra": [
+        [
+          "screw_m6",
+          0.45
+        ]
+      ],
+      "box_center_px": [
+        0.96,
+        0.94,
+        1.15
+      ],
+      "mask_center_px": [
+        0.61,
+        2.57,
+        1.17
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [],
+        "screw_m6": [
+          0.94,
+          1.15
+        ],
+        "nut_m6": [
+          0.96
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_97371_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.34,
+        1.05,
+        0.23,
+        0.6
+      ],
+      "mask_center_px": [
+        1.01,
+        1.2,
+        0.85,
+        0.52
+      ],
+      "per_class": {
+        "screw": [
+          0.34
+        ],
+        "nut": [
+          1.05
+        ],
+        "screw_m6": [
+          0.23
+        ],
+        "nut_m6": [
+          0.6
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_36641_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.88,
+        0.06,
+        0.42,
+        0.21
+      ],
+      "mask_center_px": [
+        0.65,
+        0.65,
+        1.19,
+        1.29
+      ],
+      "per_class": {
+        "screw": [
+          0.88
+        ],
+        "nut": [
+          0.06
+        ],
+        "screw_m6": [
+          0.42
+        ],
+        "nut_m6": [
+          0.21
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_1903_color.png",
+      "reference": 5,
+      "npu": 4,
+      "matched": 4,
+      "missed": [
+        [
+          "nut",
+          0.31
+        ]
+      ],
+      "extra": [],
+      "box_center_px": [
+        0.51,
+        0.4,
+        0.23,
+        0.47
+      ],
+      "mask_center_px": [
+        2.15,
+        0.78,
+        0.13,
+        0.98
+      ],
+      "per_class": {
+        "screw": [
+          0.51
+        ],
+        "nut": [
+          0.4
+        ],
+        "screw_m6": [
+          0.47
+        ],
+        "nut_m6": [
+          0.23
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_16491_color.png",
+      "reference": 3,
+      "npu": 3,
+      "matched": 3,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.17,
+        0.23,
+        1.03
+      ],
+      "mask_center_px": [
+        0.32,
+        0.47,
+        3.64
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [
+          0.17
+        ],
+        "screw_m6": [
+          1.03
+        ],
+        "nut_m6": [
+          0.23
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_595_color.png",
+      "reference": 5,
+      "npu": 4,
+      "matched": 4,
+      "missed": [
+        [
+          "nut",
+          0.28
+        ]
+      ],
+      "extra": [],
+      "box_center_px": [
+        0.46,
+        0.19,
+        0.45,
+        0.69
+      ],
+      "mask_center_px": [
+        1.4,
+        1.6,
+        0.53,
+        0.36
+      ],
+      "per_class": {
+        "screw": [
+          0.46
+        ],
+        "nut": [
+          0.19
+        ],
+        "screw_m6": [
+          0.69
+        ],
+        "nut_m6": [
+          0.45
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_62056_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.83,
+        1.74,
+        0.24,
+        0.39
+      ],
+      "mask_center_px": [
+        0.14,
+        0.31,
+        0.8,
+        0.95
+      ],
+      "per_class": {
+        "screw": [
+          0.83
+        ],
+        "nut": [
+          1.74
+        ],
+        "screw_m6": [
+          0.39
+        ],
+        "nut_m6": [
+          0.24
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_27912_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.92,
+        0.37,
+        0.56,
+        0.52,
+        1.35
+      ],
+      "mask_center_px": [
+        3.63,
+        1.68,
+        0.37,
+        0.0,
+        1.94
+      ],
+      "per_class": {
+        "screw": [
+          0.92
+        ],
+        "nut": [
+          0.37,
+          0.56
+        ],
+        "screw_m6": [
+          1.35
+        ],
+        "nut_m6": [
+          0.52
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_101253_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.33,
+        0.81,
+        0.62,
+        0.63,
+        3.65
+      ],
+      "mask_center_px": [
+        2.14,
+        0.19,
+        0.33,
+        1.47,
+        3.67
+      ],
+      "per_class": {
+        "screw": [
+          1.33
+        ],
+        "nut": [
+          0.81,
+          0.62
+        ],
+        "screw_m6": [
+          3.65
+        ],
+        "nut_m6": [
+          0.63
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_25327_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.58,
+        0.53,
+        0.3,
+        2.76
+      ],
+      "mask_center_px": [
+        0.51,
+        0.42,
+        0.0,
+        2.04
+      ],
+      "per_class": {
+        "screw": [
+          0.58
+        ],
+        "nut": [
+          0.53
+        ],
+        "screw_m6": [
+          2.76
+        ],
+        "nut_m6": [
+          0.3
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_205316/frame_989_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.55,
+        0.13,
+        2.59,
+        0.56
+      ],
+      "mask_center_px": [
+        0.62,
+        0.82,
+        0.37,
+        1.33
+      ],
+      "per_class": {
+        "screw": [
+          2.59
+        ],
+        "nut": [
+          0.13
+        ],
+        "screw_m6": [
+          0.56
+        ],
+        "nut_m6": [
+          0.55
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_499975_color.png",
+      "reference": 2,
+      "npu": 2,
+      "matched": 2,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.16,
+        0.04
+      ],
+      "mask_center_px": [
+        0.42,
+        0.0
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [
+          0.16
+        ],
+        "screw_m6": [],
+        "nut_m6": [
+          0.04
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_70532_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.24,
+        0.44,
+        0.3,
+        0.23
+      ],
+      "mask_center_px": [
+        3.48,
+        1.35,
+        1.4,
+        1.03
+      ],
+      "per_class": {
+        "screw": [
+          1.24
+        ],
+        "nut": [
+          0.44
+        ],
+        "screw_m6": [
+          0.23
+        ],
+        "nut_m6": [
+          0.3
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_109104_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.9,
+        0.24,
+        0.37,
+        1.67
+      ],
+      "mask_center_px": [
+        2.89,
+        0.88,
+        0.64,
+        1.01
+      ],
+      "per_class": {
+        "screw": [
+          0.9
+        ],
+        "nut": [
+          0.24
+        ],
+        "screw_m6": [
+          1.67
+        ],
+        "nut_m6": [
+          0.37
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_31328_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.78,
+        0.85,
+        0.48,
+        1.28
+      ],
+      "mask_center_px": [
+        0.71,
+        1.33,
+        0.83,
+        2.87
+      ],
+      "per_class": {
+        "screw": [
+          0.78
+        ],
+        "nut": [
+          0.85
+        ],
+        "screw_m6": [
+          1.28
+        ],
+        "nut_m6": [
+          0.48
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_5031_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.87,
+        0.25,
+        0.32,
+        0.62,
+        0.67
+      ],
+      "mask_center_px": [
+        0.9,
+        0.34,
+        0.73,
+        0.0,
+        0.0
+      ],
+      "per_class": {
+        "screw": [
+          0.87
+        ],
+        "nut": [
+          0.25,
+          0.67
+        ],
+        "screw_m6": [
+          0.62
+        ],
+        "nut_m6": [
+          0.32
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_251_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.41,
+        0.28,
+        0.37,
+        0.16
+      ],
+      "mask_center_px": [
+        0.41,
+        0.87,
+        1.56,
+        0.51
+      ],
+      "per_class": {
+        "screw": [
+          1.41
+        ],
+        "nut": [
+          0.37
+        ],
+        "screw_m6": [
+          0.16
+        ],
+        "nut_m6": [
+          0.28
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_32326_color.png",
+      "reference": 4,
+      "npu": 5,
+      "matched": 4,
+      "missed": [],
+      "extra": [
+        [
+          "screw",
+          0.25
+        ]
+      ],
+      "box_center_px": [
+        1.29,
+        0.16,
+        0.96,
+        0.91
+      ],
+      "mask_center_px": [
+        1.22,
+        0.67,
+        0.67,
+        0.79
+      ],
+      "per_class": {
+        "screw": [
+          1.29
+        ],
+        "nut": [
+          0.96
+        ],
+        "screw_m6": [
+          0.91
+        ],
+        "nut_m6": [
+          0.16
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_94471_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.94,
+        0.2,
+        0.79,
+        0.49
+      ],
+      "mask_center_px": [
+        0.96,
+        0.59,
+        0.63,
+        0.6
+      ],
+      "per_class": {
+        "screw": [
+          0.94
+        ],
+        "nut": [
+          0.79
+        ],
+        "screw_m6": [
+          0.49
+        ],
+        "nut_m6": [
+          0.2
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_62115_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.64,
+        1.01,
+        0.65,
+        0.29
+      ],
+      "mask_center_px": [
+        0.45,
+        0.47,
+        1.63,
+        1.77
+      ],
+      "per_class": {
+        "screw": [
+          0.64
+        ],
+        "nut": [
+          1.01
+        ],
+        "screw_m6": [
+          0.29
+        ],
+        "nut_m6": [
+          0.65
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_205316/frame_4683_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.41,
+        0.64,
+        0.19,
+        0.71
+      ],
+      "mask_center_px": [
+        1.05,
+        0.0,
+        0.34,
+        0.26
+      ],
+      "per_class": {
+        "screw": [
+          0.41
+        ],
+        "nut": [
+          0.19
+        ],
+        "screw_m6": [
+          0.71
+        ],
+        "nut_m6": [
+          0.64
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_59005_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.25,
+        0.58,
+        0.27,
+        0.2
+      ],
+      "mask_center_px": [
+        0.74,
+        0.29,
+        1.04,
+        3.02
+      ],
+      "per_class": {
+        "screw": [
+          0.25
+        ],
+        "nut": [
+          0.58
+        ],
+        "screw_m6": [
+          0.2
+        ],
+        "nut_m6": [
+          0.27
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_58459_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.97,
+        1.19,
+        0.53,
+        1.14
+      ],
+      "mask_center_px": [
+        0.6,
+        0.29,
+        0.8,
+        3.06
+      ],
+      "per_class": {
+        "screw": [
+          0.97
+        ],
+        "nut": [
+          1.19
+        ],
+        "screw_m6": [
+          1.14
+        ],
+        "nut_m6": [
+          0.53
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_107677_color.png",
+      "reference": 4,
+      "npu": 5,
+      "matched": 4,
+      "missed": [],
+      "extra": [
+        [
+          "screw_m6",
+          0.3
+        ]
+      ],
+      "box_center_px": [
+        0.35,
+        0.51,
+        0.23,
+        0.53
+      ],
+      "mask_center_px": [
+        3.38,
+        0.09,
+        0.64,
+        0.49
+      ],
+      "per_class": {
+        "screw": [
+          0.35
+        ],
+        "nut": [
+          0.51
+        ],
+        "screw_m6": [
+          0.53
+        ],
+        "nut_m6": [
+          0.23
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_58380_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.24,
+        0.24,
+        0.45,
+        0.25,
+        0.75
+      ],
+      "mask_center_px": [
+        0.85,
+        0.24,
+        0.37,
+        0.0,
+        1.24
+      ],
+      "per_class": {
+        "screw": [
+          0.45
+        ],
+        "nut": [
+          0.24,
+          0.24
+        ],
+        "screw_m6": [
+          0.75
+        ],
+        "nut_m6": [
+          0.25
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_16462_color.png",
+      "reference": 3,
+      "npu": 3,
+      "matched": 3,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.52,
+        0.23,
+        0.55
+      ],
+      "mask_center_px": [
+        0.47,
+        1.01,
+        1.06
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [],
+        "screw_m6": [
+          0.52,
+          0.55
+        ],
+        "nut_m6": [
+          0.23
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_9447_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.22,
+        0.05,
+        0.61,
+        0.16,
+        6.25
+      ],
+      "mask_center_px": [
+        2.18,
+        0.32,
+        0.59,
+        0.0,
+        6.82
+      ],
+      "per_class": {
+        "screw": [
+          1.22
+        ],
+        "nut": [
+          0.05,
+          0.61
+        ],
+        "screw_m6": [
+          6.25
+        ],
+        "nut_m6": [
+          0.16
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_729_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.75,
+        0.5,
+        0.18,
+        0.28
+      ],
+      "mask_center_px": [
+        0.16,
+        0.88,
+        0.0,
+        4.35
+      ],
+      "per_class": {
+        "screw": [
+          0.75
+        ],
+        "nut": [
+          0.5
+        ],
+        "screw_m6": [
+          0.28
+        ],
+        "nut_m6": [
+          0.18
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_175669_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.64,
+        0.13,
+        0.24,
+        0.48
+      ],
+      "mask_center_px": [
+        0.65,
+        0.32,
+        0.0,
+        0.2
+      ],
+      "per_class": {
+        "screw": [
+          0.64
+        ],
+        "nut": [
+          0.13
+        ],
+        "screw_m6": [
+          0.48
+        ],
+        "nut_m6": [
+          0.24
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_498092_color.png",
+      "reference": 3,
+      "npu": 3,
+      "matched": 2,
+      "missed": [
+        [
+          "screw",
+          0.33
+        ]
+      ],
+      "extra": [
+        [
+          "nut",
+          0.26
+        ]
+      ],
+      "box_center_px": [
+        0.35,
+        0.27
+      ],
+      "mask_center_px": [
+        0.32,
+        0.38
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [
+          0.35
+        ],
+        "screw_m6": [],
+        "nut_m6": [
+          0.27
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_91151_color.png",
+      "reference": 5,
+      "npu": 4,
+      "matched": 4,
+      "missed": [
+        [
+          "screw",
+          0.25
+        ]
+      ],
+      "extra": [],
+      "box_center_px": [
+        1.17,
+        0.15,
+        0.66,
+        0.38
+      ],
+      "mask_center_px": [
+        1.04,
+        1.43,
+        0.0,
+        0.73
+      ],
+      "per_class": {
+        "screw": [
+          1.17
+        ],
+        "nut": [
+          0.66
+        ],
+        "screw_m6": [
+          0.38
+        ],
+        "nut_m6": [
+          0.15
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_29012_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.96,
+        0.46,
+        0.23,
+        0.4,
+        2.15
+      ],
+      "mask_center_px": [
+        2.53,
+        0.61,
+        0.6,
+        0.37,
+        1.25
+      ],
+      "per_class": {
+        "screw": [
+          0.96
+        ],
+        "nut": [
+          0.46,
+          0.23
+        ],
+        "screw_m6": [
+          2.15
+        ],
+        "nut_m6": [
+          0.4
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_963_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.48,
+        0.17,
+        0.34,
+        0.95,
+        1.84
+      ],
+      "mask_center_px": [
+        0.64,
+        1.04,
+        0.44,
+        1.31,
+        1.98
+      ],
+      "per_class": {
+        "screw": [
+          0.48
+        ],
+        "nut": [
+          0.17,
+          1.84
+        ],
+        "screw_m6": [
+          0.95
+        ],
+        "nut_m6": [
+          0.34
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_201406/frame_8178_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.75,
+        0.31,
+        0.45,
+        0.11,
+        1.01
+      ],
+      "mask_center_px": [
+        2.87,
+        0.78,
+        0.68,
+        0.59,
+        1.27
+      ],
+      "per_class": {
+        "screw": [
+          0.75
+        ],
+        "nut": [
+          0.45,
+          1.01
+        ],
+        "screw_m6": [
+          0.31
+        ],
+        "nut_m6": [
+          0.11
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_90523_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.88,
+        0.39,
+        0.28,
+        0.24
+      ],
+      "mask_center_px": [
+        0.14,
+        0.73,
+        0.99,
+        0.37
+      ],
+      "per_class": {
+        "screw": [
+          0.88
+        ],
+        "nut": [
+          0.24
+        ],
+        "screw_m6": [
+          0.28
+        ],
+        "nut_m6": [
+          0.39
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_1098_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.66,
+        0.51,
+        0.47,
+        0.32,
+        0.45
+      ],
+      "mask_center_px": [
+        1.0,
+        2.11,
+        0.0,
+        0.0,
+        0.69
+      ],
+      "per_class": {
+        "screw": [
+          1.66
+        ],
+        "nut": [
+          0.51,
+          0.47
+        ],
+        "screw_m6": [
+          0.45
+        ],
+        "nut_m6": [
+          0.32
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_97313_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.33,
+        0.17,
+        0.36,
+        0.48
+      ],
+      "mask_center_px": [
+        1.39,
+        0.96,
+        1.08,
+        0.51
+      ],
+      "per_class": {
+        "screw": [
+          0.33
+        ],
+        "nut": [
+          0.17
+        ],
+        "screw_m6": [
+          0.36
+        ],
+        "nut_m6": [
+          0.48
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_205316/frame_468_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.21,
+        0.61,
+        0.99,
+        3.26
+      ],
+      "mask_center_px": [
+        0.62,
+        0.54,
+        0.97,
+        3.48
+      ],
+      "per_class": {
+        "screw": [
+          0.99
+        ],
+        "nut": [
+          0.61
+        ],
+        "screw_m6": [
+          3.26
+        ],
+        "nut_m6": [
+          0.21
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_62528_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.66,
+        0.42,
+        0.55,
+        0.41
+      ],
+      "mask_center_px": [
+        0.5,
+        0.91,
+        0.04,
+        2.51
+      ],
+      "per_class": {
+        "screw": [
+          0.66
+        ],
+        "nut": [
+          0.42
+        ],
+        "screw_m6": [
+          0.41
+        ],
+        "nut_m6": [
+          0.55
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_120700/frame_4183_color.png",
+      "reference": 5,
+      "npu": 5,
+      "matched": 5,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.37,
+        0.36,
+        0.31,
+        0.89,
+        4.36
+      ],
+      "mask_center_px": [
+        1.65,
+        0.57,
+        0.59,
+        1.29,
+        8.15
+      ],
+      "per_class": {
+        "screw": [
+          1.37
+        ],
+        "nut": [
+          0.36,
+          0.31
+        ],
+        "screw_m6": [
+          4.36
+        ],
+        "nut_m6": [
+          0.89
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_3259_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        1.03,
+        0.84,
+        0.21,
+        0.7
+      ],
+      "mask_center_px": [
+        0.19,
+        0.91,
+        0.0,
+        0.51
+      ],
+      "per_class": {
+        "screw": [
+          1.03
+        ],
+        "nut": [
+          0.84
+        ],
+        "screw_m6": [
+          0.7
+        ],
+        "nut_m6": [
+          0.21
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_23108_color.png",
+      "reference": 5,
+      "npu": 4,
+      "matched": 4,
+      "missed": [
+        [
+          "screw_m6",
+          0.36
+        ]
+      ],
+      "extra": [],
+      "box_center_px": [
+        1.36,
+        0.27,
+        0.57,
+        0.79
+      ],
+      "mask_center_px": [
+        0.66,
+        0.57,
+        0.0,
+        1.52
+      ],
+      "per_class": {
+        "screw": [
+          1.36
+        ],
+        "nut": [
+          0.27
+        ],
+        "screw_m6": [
+          0.79
+        ],
+        "nut_m6": [
+          0.57
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_205316/frame_530_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.18,
+        0.34,
+        2.51,
+        3.62
+      ],
+      "mask_center_px": [
+        0.0,
+        0.33,
+        0.76,
+        3.27
+      ],
+      "per_class": {
+        "screw": [
+          2.51
+        ],
+        "nut": [
+          0.34
+        ],
+        "screw_m6": [
+          3.62
+        ],
+        "nut_m6": [
+          0.18
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_184508/frame_59964_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.9,
+        0.45,
+        0.28,
+        0.63
+      ],
+      "mask_center_px": [
+        0.89,
+        0.29,
+        0.64,
+        0.95
+      ],
+      "per_class": {
+        "screw": [
+          0.9
+        ],
+        "nut": [
+          0.45
+        ],
+        "screw_m6": [
+          0.63
+        ],
+        "nut_m6": [
+          0.28
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_192134/frame_844_color.png",
+      "reference": 4,
+      "npu": 4,
+      "matched": 4,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.66,
+        0.67,
+        0.23,
+        0.34
+      ],
+      "mask_center_px": [
+        0.74,
+        0.84,
+        0.79,
+        0.27
+      ],
+      "per_class": {
+        "screw": [
+          0.66
+        ],
+        "nut": [
+          0.67
+        ],
+        "screw_m6": [
+          0.34
+        ],
+        "nut_m6": [
+          0.23
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261030_211325/frame_90583_color.png",
+      "reference": 6,
+      "npu": 5,
+      "matched": 5,
+      "missed": [
+        [
+          "screw",
+          0.51
+        ]
+      ],
+      "extra": [],
+      "box_center_px": [
+        1.32,
+        0.18,
+        0.32,
+        0.5,
+        4.83
+      ],
+      "mask_center_px": [
+        1.04,
+        0.44,
+        1.23,
+        0.48,
+        4.44
+      ],
+      "per_class": {
+        "screw": [
+          1.32,
+          4.83
+        ],
+        "nut": [
+          0.5
+        ],
+        "screw_m6": [
+          0.32
+        ],
+        "nut_m6": [
+          0.18
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_75067_color.png",
+      "reference": 3,
+      "npu": 3,
+      "matched": 3,
+      "missed": [],
+      "extra": [],
+      "box_center_px": [
+        0.61,
+        0.43,
+        0.52
+      ],
+      "mask_center_px": [
+        0.32,
+        0.38,
+        0.68
+      ],
+      "per_class": {
+        "screw": [],
+        "nut": [],
+        "screw_m6": [
+          0.61,
+          0.52
+        ],
+        "nut_m6": [
+          0.43
+        ]
+      }
+    },
+    {
+      "frame": "reports/parts_live_20261029_171220/frame_129990_color.png",
+      "reference": 4,
+      "npu": 5,
+      "matched": 4,
+      "missed": [],
+      "extra": [
+        [
+          "screw_m6",
+          0.35
+        ]
+      ],
+      "box_center_px": [
+        0.95,
+        0.06,
+        0.18,
+        2.65
+      ],
+      "mask_center_px": [
+        5.04,
+        0.87,
+        0.69,
+        0.35
+      ],
+      "per_class": {
+        "screw": [
+          0.95
+        ],
+        "nut": [
+          0.06
+        ],
+        "screw_m6": [
+          2.65
+        ],
+        "nut_m6": [
+          0.18
+        ]
+      }
+    }
+  ],
+  "scope": "quantization effect only: INT8 on the NPU vs the same float graph on the CPU, same preprocessing, live frames not in training"
+}

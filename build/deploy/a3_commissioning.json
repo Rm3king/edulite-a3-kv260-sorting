@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-17T00:17:16.427395+08:00",
+  "zero_reference": "EXISTING_MOTOR_FLASH_USER_CONFIRMED_CALIBRATED_DO_NOT_REZERO",
+  "joint_directions": [
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1
+  ],
+  "software_joint_offsets_rad": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "arm_joint_limits_rad": [
+    [
+      -2.79253,
+      2.79253
+    ],
+    [
+      0,
+      3.66519
+    ],
+    [
+      -4.01426,
+      0
+    ],
+    [
+      -1.5708,
+      1.5708
+    ],
+    [
+      -1.5708,
+      1.5708
+    ],
+    [
+      -1.5708,
+      1.5708
+    ]
+  ],
+  "arm_limits_source": "CURRENT_SIBLING_SDK",
+  "gripper": {
+    "motor_id": 7,
+    "control_mode": "POSITION_PP",
+    "closed_motor_rad": 1.677834153175354,
+    "closed_sample_min_rad": 1.677834153175354,
+    "closed_sample_max_rad": 1.677834153175354,
+    "closed_pose": "USER_CONFIRMED_FULLY_CLOSED",
+    "closed_evidence": "reports/control_safety_20261016/read_arm_v2_attempt1.json",
+    "open_motor_rad": -0.005880276206880808,
+    "operating_motor_limits_rad": [
+      -0.005880276206880808,
+      1.677834153175354
+    ],
+    "motion_ready": false,
+    "status": "PASS_SMALL_STEP_AND_THREE_INTERIOR_ROUND_TRIPS",
+    "old_sdk_generic_limit_is_physical_limit": false,
+    "open_sample_min_rad": -0.005880276206880808,
+    "open_sample_max_rad": -0.005880276206880808,
+    "open_pose": "USER_CONFIRMED_MAXIMUM_DESIRED_OPEN",
+    "open_evidence": "reports/control_safety_20261016/gripper_open_read.json",
+    "opening_motor_direction": -1,
+    "opening_fraction_convention": "0=CLOSED,1=OPEN",
+    "guard_scope": "PL_V3_TYPE18_WHITELIST_FLOAT_BOUNDS_PREPARE_ENABLE_AND_FEEDBACK_AGE",
+    "first_powered_move": {
+      "status": "PASS",
+      "evidence": "reports/gripper_commissioning_20261016/gripper_move_attempt1.json",
+      "displacement_rad": 0.050067424308508635,
+      "final_error_rad": 6.742430850863179e-05,
+      "disable_confirmed": true
+    },
+    "motion_ready_reason": "Small step and three interior round trips passed; full travel, gripping and fault-stop commissioning remain unverified",
+    "commissioning_volatile_parameters": {
+      "0x7005": 1,
+      "0x7024": 0.03999999910593033,
+      "0x7025": 0.20000000298023224,
+      "0x7018": 0.30000001192092896,
+      "0x7028": 6000,
+      "0x7016": 0.03626158460974693
+    },
+    "repeat_test": {
+      "status": "PASS_THREE_SMALL_ROUND_TRIPS_ONLY",
+      "evidence": "reports/gripper_repeat_20261016/validation.json",
+      "maximum_endpoint_error_rad": 0.0016192086040973663,
+      "return_error_rad": 0.00038351118564605713
+    }
+  },
+  "loss_handling": {
+    "base_fixed": "USER_CONFIRMED",
+    "current_disabled_pose_stable": "USER_REPORTED",
+    "raised_arm_supported": true,
+    "automatic_disable_after_motion": "PASS_SUPPORTED_NORMAL_TYPE4_RESET_ALL_7_NOT_COMMUNICATION_LOSS_TEST",
+    "arm_segments_supported": true,
+    "arm_support_source": "USER_CONFIRMED_SUPPORT_IN_PLACE_CLEAR_AREA_ATTENDING_WITH_POWER_CUTOFF_20261016"
+  },
+  "arm_commissioning": {
+    "status": "PARTIAL_SEVEN_HOLD_AND_FIVE_AXES_SMALL_MOTION_PASS",
+    "evidence": "reports/arm_commissioning_20261016/validation.json",
+    "seven_axis_hold": "PASS",
+    "normal_reset_all_seven": "PASS",
+    "small_motion_pass_axes": [
+      1,
+      4,
+      5,
+      6,
+      7
+    ],
+    "not_reached_at_0_5A": [
+      2,
+      3
+    ],
+    "motion_ready": false,
+    "last_zero_attempt": {
+      "status": "PARTIAL_AXES_2_3_ZERO_REACHED_AXIS_4_STALLED_STOPPED_NO_RETRY",
+      "evidence": "reports/arm_commissioning_20261016/zero_validation.json",
+      "full_zero_pose_reached": false,
+      "completed_before_stop": [
+        2,
+        3
+      ],
+      "stalled_axis": 4,
+      "attempts": 1,
+      "all_motors_reset_confirmed": true,
+      "position_hold_after_disable": false,
+      "current_limits_ram_a": [
+        0.5,
+        1.5,
+        1.5,
+        0.5,
+        0.5,
+        0.5,
+        0.3
+      ]
+    }
+  }
+}

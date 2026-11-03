@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:workcell:task:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "action",
+    "steps",
+    "exclude",
+    "question"
+  ],
+  "properties": {
+    "version": {
+      "const": "workcell.task.v1"
+    },
+    "action": {
+      "enum": [
+        "plan",
+        "clarify",
+        "pause",
+        "resume"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "part_class",
+          "quantity",
+          "region",
+          "destination"
+        ],
+        "properties": {
+          "part_class": {
+            "enum": [
+              "screw",
+              "nut"
+            ]
+          },
+          "quantity": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 20
+              },
+              {
+                "const": "all"
+              }
+            ]
+          },
+          "region": {
+            "enum": [
+              "all",
+              "left",
+              "right"
+            ]
+          },
+          "destination": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        }
+      }
+    },
+    "exclude": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "screw",
+          "nut"
+        ]
+      }
+    },
+    "question": {
+      "type": "string",
+      "maxLength": 200
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "plan"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "steps": {
+            "minItems": 1
+          },
+          "question": {
+            "const": ""
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "steps": {
+            "maxItems": 0
+          },
+          "exclude": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "clarify"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "question": {
+            "minLength": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "question": {
+            "const": ""
+          }
+        }
+      }
+    }
+  ]
+}

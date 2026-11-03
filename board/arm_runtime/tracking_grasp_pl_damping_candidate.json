@@ -1,0 +1,75 @@
+{
+  "schema": "kv260.attended_bounded_autotune.v1",
+  "source": "Experimental v6.2 PL filtered joint3 velocity-error damping; no adopted smoothness result",
+  "kp": [
+    80,
+    60,
+    60,
+    80,
+    80,
+    80
+  ],
+  "kd": [
+    4,
+    5,
+    5,
+    5,
+    4,
+    4
+  ],
+  "gravity_joint_scale": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "motor_model": [
+    "RS00",
+    "RS00",
+    "RS00",
+    "EL05",
+    "EL05",
+    "EL05"
+  ],
+  "motor_torque_limit_nm": [
+    1.5,
+    4.5,
+    5.5,
+    2.5,
+    1,
+    1
+  ],
+  "following_envelope_rad": 0.08,
+  "endpoint_tolerance_rad": 0.06,
+  "scope": "Recorded full empty-pick diagnostic numeric baseline; NOT global optimum or task-level smoothness PASS",
+  "note": "Preserves gravity1, dynamics0, friction0 and established torque caps. Native CSP loc_kp remains30. No service default or Flash update.",
+  "guard_kp": [
+    240,
+    240,
+    240,
+    180,
+    180,
+    180
+  ],
+  "guard_kd": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "inverse_dynamics_scale": 0.0,
+  "friction_coulomb_nm": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "friction_velocity_scale_rad_s": 0.05,
+  "pl_joint3_damping_nm_s_rad": 2.0
+}

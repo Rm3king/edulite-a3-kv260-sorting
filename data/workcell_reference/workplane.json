@@ -1,0 +1,90 @@
+{
+  "schema": "aipc.workplane.candidate.v1",
+  "created_at": "2026-10-23T20:57:20.195825+08:00",
+  "status": "CANDIDATE_INTERNAL_FIT_PASS",
+  "plane": {
+    "normal_camera": [
+      -0.002149387492266463,
+      0.3137911781042856,
+      -0.9494895874507162
+    ],
+    "offset_m": 0.4719585799021827,
+    "samples": 2631,
+    "inlier_fraction": 0.9395667046750285,
+    "threshold_m": 0.002,
+    "inlier_rmse_m": 0.0008419817956651543,
+    "all_abs_residual_p95_m": 0.002091809925470617,
+    "metric_accuracy_verified": false,
+    "robot_grasp_allowed": false,
+    "heldout_abs_residual_p95_m": 0.0020868187845080642,
+    "heldout_rmse_m": 0.0010741575465137807,
+    "normal_base": [
+      0.0819681158528592,
+      -0.07193497211474954,
+      0.9940355062925977
+    ],
+    "offset_base_m": 0.058414136892216306
+  },
+  "config": {
+    "empty_scene": "train_001",
+    "fit_roi_uv": [
+      [
+        1020,
+        310
+      ],
+      [
+        1330,
+        110
+      ],
+      [
+        1600,
+        570
+      ],
+      [
+        1320,
+        740
+      ]
+    ],
+    "ransac_threshold_m": 0.002,
+    "max_heldout_p95_m": 0.003,
+    "scope": "Manual conservative interior patch of reviewed empty right tray. Fixed before inspecting plane residuals. Not a reachable ROI or tray boundary."
+  },
+  "intrinsics": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1372.0753173828125,
+    "fy": 1374.9302978515625,
+    "cx": 970.2442016601562,
+    "cy": 557.84814453125,
+    "coeffs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "distortion": "distortion.inverse_brown_conrady"
+  },
+  "depth_scale_m": 0.0010000000474974513,
+  "camera_serial": "213622075716",
+  "calibration_id": "q18_scene_20261026_132258",
+  "source_scene": "train_001",
+  "valid_depth_fraction": 1.0,
+  "fit_samples": 2631,
+  "heldout_samples": 2500,
+  "robot_grasp_allowed": false,
+  "metric_accuracy_verified": false,
+  "heights_measured": false,
+  "camera_opened": false,
+  "robot_commands_sent": 0,
+  "note": "Manual interior support fit region only, not reachable ROI, tray wall clearance or motion approval. Plane re-expressed for the rotated camera from the unchanged base-frame plane; fit region/pixels not re-measured.",
+  "source_sha256": {
+    "/opt/edulite/host/data/parts_fixedview_20261023_v1/images/train_001.png": "6c62ee641b55785cfa7372a409d9818ee51d5b31dd26751f717c70b091716add",
+    "/opt/edulite/host/data/parts_fixedview_20261023_v1/raw/train_001_depth.npy": "74c637af13d8706fcd0e39f63619186cc1d94c7aa7bb7d2b10fd13e567284e34",
+    "/opt/edulite/host/data/parts_fixedview_20261023_v1/raw/train_001_capture.json": "afca658d8dc203cdbc86f9dc63ecf96a372887c8e81ac287c9031459cdb8310d",
+    "/opt/edulite/host/configs/parts_support_fit_20261023_v1.json": "eeb69f6f8847af1053dbdfaca84c62157d3aaea04f53906dc94564cfdf4d69a5",
+    "/opt/edulite/host/reports/q18_wide_20261023_165239/camera_to_base_candidate.json": "b0342a5cff4e39b70154439a50a39b71a8e0b852bcd2144cedac3dd54a72a277",
+    "/opt/edulite/host/src/fit_workplane.py": "c7f7cdcb9ebf21671e38c11050e59841cccd3d368c7d2db34c0e3ab37e76762d",
+    "/opt/edulite/host/src/workplane_geometry.py": "772b8aa0ebd646c8b5bd78691245483d9e8394f454fbfa9ef13b6c41d19155f1"
+  }
+}

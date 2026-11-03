@@ -1,0 +1,10 @@
+{
+  "schema": "aipc.measured_part_surface_heights.v1",
+  "units": "m",
+  "source": "User physical measurement reported in conversation, 2026-10-23",
+  "measurement_uncertainty_m": null,
+  "surface_heights_m": {"screw": 0.01327, "nut": 0.01045},
+  "poses": {"screw": "Single-layer screw lying on tray; height at shaft middle top surface including head support", "nut": "Flat nut, hole facing camera; top face height"},
+  "grasp_center_heights_m": null,
+  "note": "Surface heights are not jaw/TCP grasp heights. No half-M12 or half-surface-height assumption. Different poses and stacked objects invalidate these values."
+}
